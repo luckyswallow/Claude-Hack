@@ -52,11 +52,31 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe cards for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.content-card, .tool-card, .why-item, .team-card');
+    const cards = document.querySelectorAll('.content-card, .tool-card, .why-item, .team-card, .jurisdiction-card');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
+    });
+
+    // Jurisdiction selection
+    const jurisdictionCards = document.querySelectorAll('.jurisdiction-card');
+    jurisdictionCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Toggle selected state
+            this.classList.toggle('selected');
+
+            // Get selected region
+            const region = this.getAttribute('data-region');
+            const isSelected = this.classList.contains('selected');
+
+            // Log selection (you can replace this with actual form submission or API call)
+            if (isSelected) {
+                console.log(`Selected jurisdiction: ${region}`);
+            } else {
+                console.log(`Deselected jurisdiction: ${region}`);
+            }
+        });
     });
 });
