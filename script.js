@@ -151,6 +151,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: 'OECD Guidelines for Multinational Enterprises', url: 'https://www.oecd.org/corporate/mne/' },
                 { name: 'UN Global Compact Principles', url: 'https://www.unglobalcompact.org/' }
             ]
+        },
+        formats: {
+            title: 'Available Report Formats',
+            standards: [
+                { name: 'PDF Format - Professional report with charts and graphics', url: '#' },
+                { name: 'Excel/CSV Format - Data tables for analysis and modeling', url: '#' },
+                { name: 'HTML Interactive Report - Web-based interactive dashboard', url: '#' },
+                { name: 'JSON/XML Format - Machine-readable structured data', url: '#' },
+                { name: 'PowerPoint Summary - Executive presentation slides', url: '#' },
+                { name: 'Word Document - Editable detailed report', url: '#' }
+            ]
         }
     };
 
