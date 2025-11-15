@@ -233,6 +233,20 @@
                         <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any additional context, annual reports, sustainability goals, or specific data you'd like to include..."></textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="document-upload">Upload Supporting Documents (Optional)</label>
+                        <p class="field-hint">Upload annual reports, sustainability reports, or other relevant documents (PDF, DOCX, XLSX, CSV - Max 10MB per file)</p>
+                        <div class="file-upload-container">
+                            <input type="file" id="document-upload" name="documents" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv" class="file-input">
+                            <label for="document-upload" class="file-upload-label">
+                                <span class="upload-icon">📄</span>
+                                <span class="upload-text">Click to upload or drag and drop</span>
+                                <span class="upload-hint">PDF, Word, Excel, or CSV files</span>
+                            </label>
+                            <div class="uploaded-files-list" id="uploaded-files-list"></div>
+                        </div>
+                    </div>
+
                     <button type="submit" class="submit-button">
                         <span class="button-text">Generate ESG Report</span>
                         <span class="button-icon">→</span>

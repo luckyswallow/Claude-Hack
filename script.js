@@ -215,6 +215,134 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // File Upload Handling
+    const fileInput = document.getElementById('document-upload');
+    const fileUploadLabel = document.querySelector('.file-upload-label');
+    const uploadedFilesList = document.getElementById('uploaded-files-list');
+    let uploadedFiles = [];
+
+    // File size limit (10MB)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
+    // File icon mapping
+    const fileIcons = {
+        'pdf': '📕',
+        'doc': '📘',
+        'docx': '📘',
+        'xls': '📗',
+        'xlsx': '📗',
+        'csv': '📊'
+    };
+
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+    }
+
+    function getFileExtension(filename) {
+        return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2).toLowerCase();
+    }
+
+    function addFileToList(file) {
+        const fileExt = getFileExtension(file.name);
+        const fileIcon = fileIcons[fileExt] || '📄';
+
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        fileItem.innerHTML = `
+            <div class="file-info">
+                <span class="file-icon">${fileIcon}</span>
+                <div class="file-details">
+                    <div class="file-name">${file.name}</div>
+                    <div class="file-size">${formatFileSize(file.size)}</div>
+                </div>
+            </div>
+            <button type="button" class="file-remove" data-filename="${file.name}">✕</button>
+        `;
+
+        uploadedFilesList.appendChild(fileItem);
+
+        // Add remove handler
+        const removeBtn = fileItem.querySelector('.file-remove');
+        removeBtn.addEventListener('click', function() {
+            const filename = this.getAttribute('data-filename');
+            uploadedFiles = uploadedFiles.filter(f => f.name !== filename);
+            fileItem.remove();
+        });
+    }
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+
+            files.forEach(file => {
+                // Check file size
+                if (file.size > MAX_FILE_SIZE) {
+                    alert(`File "${file.name}" exceeds 10MB limit and will not be uploaded.`);
+                    return;
+                }
+
+                // Check if file already exists
+                if (uploadedFiles.some(f => f.name === file.name)) {
+                    alert(`File "${file.name}" is already uploaded.`);
+                    return;
+                }
+
+                uploadedFiles.push(file);
+                addFileToList(file);
+            });
+
+            // Reset input
+            fileInput.value = '';
+        });
+
+        // Drag and drop support
+        fileUploadLabel.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'var(--primary-color)';
+            this.style.background = 'rgba(37, 99, 235, 0.08)';
+        });
+
+        fileUploadLabel.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'var(--border-color)';
+            this.style.background = 'var(--bg-light)';
+        });
+
+        fileUploadLabel.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'var(--border-color)';
+            this.style.background = 'var(--bg-light)';
+
+            const files = Array.from(e.dataTransfer.files);
+
+            // Filter only accepted file types
+            const acceptedExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'csv'];
+            const validFiles = files.filter(file => {
+                const ext = getFileExtension(file.name);
+                return acceptedExtensions.includes(ext);
+            });
+
+            validFiles.forEach(file => {
+                if (file.size > MAX_FILE_SIZE) {
+                    alert(`File "${file.name}" exceeds 10MB limit and will not be uploaded.`);
+                    return;
+                }
+
+                if (uploadedFiles.some(f => f.name === file.name)) {
+                    alert(`File "${file.name}" is already uploaded.`);
+                    return;
+                }
+
+                uploadedFiles.push(file);
+                addFileToList(file);
+            });
+        });
+    }
+
     // Form submission
     const esgForm = document.getElementById('esg-form');
     const reportResult = document.getElementById('report-result');
@@ -241,6 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 companyWebsite,
                 companyDescription,
                 additionalInfo,
+                uploadedFiles: uploadedFiles.map(f => ({ name: f.name, size: f.size })),
                 jurisdiction: selectedJurisdiction,
                 jurisdictionTitle: jurisdictionData[selectedJurisdiction].title,
                 standards: jurisdictionData[selectedJurisdiction].standards,
