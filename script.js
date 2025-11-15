@@ -1115,13 +1115,124 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li>Monitor and report water usage and conservation efforts</li>
             </ul>
 
-            <h3>Social (S)</h3>
-            <ul>
-                <li>Ensure workplace diversity, equity, and inclusion programs</li>
-                <li>Maintain employee health, safety, and wellbeing standards</li>
-                <li>Engage in community development and social impact projects</li>
-                <li>Uphold human rights and fair labor practices across supply chain</li>
-            </ul>
+            <h3 style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: #fffbeb; border-radius: 0.5rem; border-left: 4px solid #f59e0b;" onclick="toggleSocialDetails()">
+                <span>Social (S)</span>
+                <span id="social-toggle-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">▼</span>
+            </h3>
+
+            <div id="social-details" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
+                <div style="padding: 1.5rem; background: #fffbeb; border-radius: 0 0 0.5rem 0.5rem; margin-top: -0.5rem;">
+                    <h4 style="color: #d97706; margin-bottom: 1rem;">Core Recommendations</h4>
+                    <ul>
+                        <li>Ensure workplace diversity, equity, and inclusion programs</li>
+                        <li>Maintain employee health, safety, and wellbeing standards</li>
+                        <li>Engage in community development and social impact projects</li>
+                        <li>Uphold human rights and fair labor practices across supply chain</li>
+                    </ul>
+
+                    <h4 style="color: #d97706; margin: 1.5rem 0 1rem;">Detailed Analysis & Implementation Steps</h4>
+
+                    <div style="background: white; padding: 1.25rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 3px solid #f59e0b;">
+                        <h5 style="color: #1f2937; margin-bottom: 0.75rem; font-size: 1.1rem;">1. Diversity, Equity & Inclusion (DEI) Programs</h5>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Why it matters:</strong> Diverse teams drive innovation and better business outcomes. Companies in the top quartile for diversity are 35% more likely to outperform their peers.</p>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Implementation steps:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Conduct diversity audit across all levels (entry to C-suite)</li>
+                            <li>Set measurable DEI targets: 40-60% gender balance, ethnic diversity reflecting local demographics</li>
+                            <li>Implement blind recruitment processes to reduce unconscious bias</li>
+                            <li>Establish Employee Resource Groups (ERGs) for underrepresented communities</li>
+                            <li>Provide mandatory DEI training for all managers and employees</li>
+                            <li>Review and update policies to ensure inclusive language and practices</li>
+                        </ul>
+                        <p style="color: #6b7280; margin-top: 0.75rem;"><strong>KPIs to track:</strong> Diversity hiring rate, retention rates by demographic, promotion equity, employee engagement scores by group, pay equity ratios</p>
+                    </div>
+
+                    <div style="background: white; padding: 1.25rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 3px solid #f59e0b;">
+                        <h5 style="color: #1f2937; margin-bottom: 0.75rem; font-size: 1.1rem;">2. Employee Health, Safety & Wellbeing</h5>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Why it matters:</strong> Employee wellbeing directly impacts productivity, retention, and company reputation. Poor health and safety practices can lead to legal liabilities and reputational damage.</p>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Implementation steps:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Conduct comprehensive workplace health and safety risk assessments</li>
+                            <li>Implement ISO 45001 occupational health and safety management system</li>
+                            <li>Provide mental health support: counseling services, stress management workshops</li>
+                            <li>Offer comprehensive health benefits including preventive care</li>
+                            <li>Create ergonomic workspaces and provide equipment for remote workers</li>
+                            <li>Establish work-life balance policies: flexible hours, remote work options, PTO requirements</li>
+                            <li>Launch wellness programs: fitness subsidies, healthy eating options, meditation rooms</li>
+                        </ul>
+                        <p style="color: #6b7280; margin-top: 0.75rem;"><strong>KPIs to track:</strong> Lost Time Injury Frequency Rate (LTIFR), absenteeism rate, employee satisfaction scores, health benefit utilization, work-life balance survey results</p>
+                    </div>
+
+                    <div style="background: white; padding: 1.25rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 3px solid #f59e0b;">
+                        <h5 style="color: #1f2937; margin-bottom: 0.75rem; font-size: 1.1rem;">3. Community Development & Social Impact</h5>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Why it matters:</strong> Companies that invest in local communities build stronger stakeholder relationships, enhance brand reputation, and create shared value.</p>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Implementation steps:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Allocate 1-2% of annual profits to community investment programs</li>
+                            <li>Identify local community needs through stakeholder engagement</li>
+                            <li>Partner with local NGOs and social enterprises on impact projects</li>
+                            <li>Implement local hiring programs, especially from disadvantaged communities</li>
+                            <li>Offer paid volunteer time off (e.g., 2-3 days per year per employee)</li>
+                            <li>Support education initiatives: scholarships, STEM programs, vocational training</li>
+                            <li>Contribute to local infrastructure, healthcare, or environmental projects</li>
+                        </ul>
+                        <p style="color: #6b7280; margin-top: 0.75rem;"><strong>KPIs to track:</strong> Community investment amount, volunteer hours, local hiring percentage, beneficiaries reached, social return on investment (SROI)</p>
+                    </div>
+
+                    <div style="background: white; padding: 1.25rem; border-radius: 0.5rem; border-left: 3px solid #f59e0b;">
+                        <h5 style="color: #1f2937; margin-bottom: 0.75rem; font-size: 1.1rem;">4. Human Rights & Supply Chain Labor Practices</h5>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Why it matters:</strong> Supply chain violations can result in legal penalties, brand damage, and loss of customer trust. Modern slavery and forced labor are critical ESG risks.</p>
+                        <p style="color: #6b7280; margin-bottom: 0.75rem;"><strong>Implementation steps:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Conduct human rights due diligence across entire supply chain</li>
+                            <li>Implement Supplier Code of Conduct covering labor rights, working conditions, fair wages</li>
+                            <li>Perform regular audits of high-risk suppliers (especially in developing countries)</li>
+                            <li>Establish grievance mechanisms for workers in supply chain</li>
+                            <li>Require suppliers to certify no forced labor, child labor, or human trafficking</li>
+                            <li>Support supplier capacity building on labor standards</li>
+                            <li>Publish annual Modern Slavery Statement (if required by jurisdiction)</li>
+                            <li>Map supply chain to identify and address risks</li>
+                        </ul>
+                        <p style="color: #6b7280; margin-top: 0.75rem;"><strong>KPIs to track:</strong> Percentage of suppliers audited, non-compliance findings and remediation, supplier training completion, grievances reported and resolved, supply chain transparency score</p>
+                    </div>
+
+                    <div style="background: #fef3c7; padding: 1.25rem; border-radius: 0.5rem; margin-top: 1.5rem; border: 2px solid #f59e0b;">
+                        <h5 style="color: #92400e; margin-bottom: 0.75rem; font-size: 1.1rem;">📊 Recommended Timeline</h5>
+                        <ul style="color: #78350f; margin-left: 1.5rem;">
+                            <li><strong>Months 1-3:</strong> Assessment phase - conduct audits, identify gaps, set baseline metrics</li>
+                            <li><strong>Months 4-6:</strong> Policy development - create or update DEI, health & safety, community, and supply chain policies</li>
+                            <li><strong>Months 7-12:</strong> Implementation - launch programs, train employees, engage suppliers</li>
+                            <li><strong>Year 2+:</strong> Monitor, measure, and continuously improve based on KPI performance</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #dbeafe; padding: 1.25rem; border-radius: 0.5rem; margin-top: 1rem; border: 2px solid #2563eb;">
+                        <h5 style="color: #1e3a8a; margin-bottom: 0.75rem; font-size: 1.1rem;">💡 Best Practice Resources</h5>
+                        <ul style="color: #1e40af; margin-left: 1.5rem;">
+                            <li>UN Guiding Principles on Business and Human Rights</li>
+                            <li>ISO 45001 (Health & Safety), ISO 26000 (Social Responsibility)</li>
+                            <li>GRI Standards for social impact reporting</li>
+                            <li>B Impact Assessment for comprehensive social performance</li>
+                            <li>Fair Labor Association guidelines for supply chain management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function toggleSocialDetails() {
+                const details = document.getElementById('social-details');
+                const icon = document.getElementById('social-toggle-icon');
+
+                if (details.style.maxHeight === '0px' || details.style.maxHeight === '') {
+                    details.style.maxHeight = details.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    details.style.maxHeight = '0px';
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+            </script>
 
             <h3>Governance (G)</h3>
             <ul>
