@@ -922,6 +922,621 @@ document.addEventListener('DOMContentLoaded', () => {
                     ]
                 }
             ]
+        },
+        '1': {
+            title: 'SDG 1: No Poverty',
+            subtitle: 'End poverty in all its forms everywhere',
+            color: '#E5243B',
+            sections: [
+                {
+                    title: 'Living Wage & Economic Security',
+                    items: [
+                        'Pay all employees above living wage standards in every region',
+                        'Comprehensive benefits package including retirement, healthcare, and emergency funds',
+                        'Financial wellness programs and literacy training',
+                        'Employee assistance programs for financial hardship',
+                        'Transparent salary bands and pay equity across all roles'
+                    ]
+                },
+                {
+                    title: 'Community Investment',
+                    items: [
+                        'Local hiring programs in economically disadvantaged areas',
+                        'Supplier diversity focusing on small and minority-owned businesses',
+                        'Community development partnerships and grants',
+                        'Support for affordable housing initiatives near company facilities',
+                        'Educational scholarships for underprivileged students'
+                    ]
+                },
+                {
+                    title: 'Supply Chain Impact',
+                    items: [
+                        'Fair trade practices and ethical sourcing commitments',
+                        'Supplier audits to ensure living wages throughout supply chain',
+                        'Support for supplier development in emerging markets',
+                        'Economic empowerment programs for marginalized communities'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Living wage compliance: 100% of employees and contract workers',
+                        'Community investment: 1-2% of annual profits',
+                        'Local procurement: 30% from economically disadvantaged areas',
+                        'Financial hardship assistance: Support provided to 100% of applicants in need'
+                    ]
+                }
+            ]
+        },
+        '2': {
+            title: 'SDG 2: Zero Hunger',
+            subtitle: 'End hunger, achieve food security and improved nutrition',
+            color: '#DDA63A',
+            sections: [
+                {
+                    title: 'Employee Food Security',
+                    items: [
+                        'Subsidized or free nutritious meals for all employees',
+                        'Food assistance programs for employees facing hardship',
+                        'Partnerships with food banks and nutrition programs',
+                        'Healthy snacks and beverages provided in all facilities',
+                        'Nutrition education and wellness programs'
+                    ]
+                },
+                {
+                    title: 'Community Programs',
+                    items: [
+                        'Corporate donations to local food banks and hunger relief organizations',
+                        'Employee volunteer programs for food distribution',
+                        'Support for urban agriculture and community gardens',
+                        'Partnerships with organizations fighting food insecurity',
+                        'Food rescue programs to reduce waste and feed communities'
+                    ]
+                },
+                {
+                    title: 'Sustainable Food Systems',
+                    items: [
+                        'Sustainable sourcing practices for cafeteria and catering',
+                        'Support for regenerative agriculture initiatives',
+                        'Reduction of food waste across operations',
+                        'Investment in food technology innovations'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Employee food security: 100% access to nutritious meals',
+                        'Food donations: Meals provided to community annually',
+                        'Food waste reduction: 50% decrease target',
+                        'Volunteer hours: Employee participation in hunger relief programs'
+                    ]
+                }
+            ]
+        },
+        '3': {
+            title: 'SDG 3: Good Health and Well-Being',
+            subtitle: 'Ensure healthy lives and promote well-being for all at all ages',
+            color: '#4C9F38',
+            sections: [
+                {
+                    title: 'Employee Health & Wellness',
+                    items: [
+                        'Comprehensive health insurance covering medical, dental, and vision',
+                        'Mental health support including counseling and therapy services',
+                        'On-site health clinics and wellness centers',
+                        'Preventive care programs and annual health screenings',
+                        'Fitness subsidies and workplace wellness initiatives',
+                        'Paid sick leave and family medical leave policies',
+                        'Ergonomic workspaces and injury prevention programs'
+                    ]
+                },
+                {
+                    title: 'Mental Health & Work-Life Balance',
+                    items: [
+                        'Employee Assistance Programs (EAP) with 24/7 access',
+                        'Mental health days and flexible time off policies',
+                        'Stress management and mindfulness programs',
+                        'Manager training on mental health awareness',
+                        'Destigmatization campaigns and open dialogue initiatives',
+                        'Work-from-home and flexible scheduling options'
+                    ]
+                },
+                {
+                    title: 'Community Health Impact',
+                    items: [
+                        'Health education and awareness campaigns',
+                        'Partnerships with local health organizations',
+                        'Support for public health initiatives',
+                        'Employee volunteer programs for health services',
+                        'Donations to healthcare accessibility programs'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Health coverage: 100% of employees with comprehensive plans',
+                        'Mental health utilization: Tracking EAP usage and satisfaction',
+                        'Employee wellness score: Target >4.0/5.0',
+                        'Workplace injuries: Zero serious incidents target',
+                        'Health program participation: >60% employee engagement'
+                    ]
+                }
+            ]
+        },
+        '4': {
+            title: 'SDG 4: Quality Education',
+            subtitle: 'Ensure inclusive and equitable quality education and promote lifelong learning',
+            color: '#C5192D',
+            sections: [
+                {
+                    title: 'Employee Learning & Development',
+                    items: [
+                        'Tuition reimbursement programs for continued education',
+                        'Internal training programs and skill development courses',
+                        'Leadership development and mentorship programs',
+                        'Access to online learning platforms and resources',
+                        'Professional certifications and conference attendance support',
+                        'Career development planning and coaching',
+                        'Cross-functional training and job rotation opportunities'
+                    ]
+                },
+                {
+                    title: 'Community Education Programs',
+                    items: [
+                        'STEM education partnerships with local schools',
+                        'Scholarship programs for underrepresented students',
+                        'Internship and apprenticeship opportunities',
+                        'Coding bootcamps and technology literacy programs',
+                        'Guest lectures and career mentoring in schools',
+                        'Donations of equipment and resources to educational institutions'
+                    ]
+                },
+                {
+                    title: 'Digital Literacy & Access',
+                    items: [
+                        'Technology access programs for underserved communities',
+                        'Digital skills training for employees and community members',
+                        'Support for libraries and educational technology initiatives',
+                        'Open educational resources and knowledge sharing'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Training hours per employee: Target 40+ hours annually',
+                        'Tuition reimbursement: 100% participation rate for eligible employees',
+                        'Scholarship recipients: Number of students supported annually',
+                        'Community education reach: Individuals impacted by programs',
+                        'Employee skill advancement: Percentage completing certifications'
+                    ]
+                }
+            ]
+        },
+        '5': {
+            title: 'SDG 5: Gender Equality',
+            subtitle: 'Achieve gender equality and empower all women and girls',
+            color: '#FF3A21',
+            sections: [
+                {
+                    title: 'Gender Pay Equity',
+                    items: [
+                        'Regular pay equity audits and transparent reporting',
+                        'Commitment to equal pay for equal work across all roles',
+                        'Public disclosure of gender pay gap metrics',
+                        'Proactive salary adjustments to close identified gaps',
+                        'Compensation frameworks that eliminate bias'
+                    ]
+                },
+                {
+                    title: 'Women in Leadership',
+                    items: [
+                        'Leadership development programs for women',
+                        'Targets for women in senior leadership positions',
+                        'Mentorship and sponsorship programs',
+                        'Board diversity commitments',
+                        'Succession planning with gender balance focus',
+                        'Women\'s employee resource groups and networks'
+                    ]
+                },
+                {
+                    title: 'Family Support & Work-Life Balance',
+                    items: [
+                        'Generous paid parental leave for all genders',
+                        'On-site childcare or childcare subsidies',
+                        'Flexible work arrangements for caregivers',
+                        'Return-to-work programs after parental leave',
+                        'Lactation rooms and family-friendly facilities',
+                        'Equal parental leave policies to promote shared caregiving'
+                    ]
+                },
+                {
+                    title: 'Anti-Harassment & Safe Workplace',
+                    items: [
+                        'Zero-tolerance policy for harassment and discrimination',
+                        'Regular training on respect, inclusion, and bystander intervention',
+                        'Clear reporting mechanisms with protection from retaliation',
+                        'Swift investigation and accountability for violations',
+                        'Safe spaces and support resources for affected individuals'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Gender pay gap: Target <2% across all levels',
+                        'Women in leadership: 40-60% representation in senior roles',
+                        'Women on board: Minimum 30% board representation',
+                        'Parental leave utilization: Equal uptake across genders',
+                        'Retention after parental leave: >90% return rate'
+                    ]
+                }
+            ]
+        },
+        '6': {
+            title: 'SDG 6: Clean Water and Sanitation',
+            subtitle: 'Ensure availability and sustainable management of water and sanitation for all',
+            color: '#26BDE2',
+            sections: [
+                {
+                    title: 'Water Conservation',
+                    items: [
+                        'Water-efficient fixtures and technologies in all facilities',
+                        'Rainwater harvesting and greywater recycling systems',
+                        'Water consumption monitoring and reduction targets',
+                        'Landscape design using native, drought-resistant plants',
+                        'Employee education on water conservation practices'
+                    ]
+                },
+                {
+                    title: 'Water Quality Management',
+                    items: [
+                        'Wastewater treatment before discharge',
+                        'Regular water quality testing and monitoring',
+                        'Prevention of water pollution from operations',
+                        'Compliance with all water quality regulations',
+                        'Investment in clean water technologies'
+                    ]
+                },
+                {
+                    title: 'Community Water Access',
+                    items: [
+                        'Support for clean water projects in water-scarce regions',
+                        'Partnerships with water.org and similar organizations',
+                        'Employee volunteer programs for water infrastructure projects',
+                        'Advocacy for universal water access policies',
+                        'Donations to water sanitation initiatives'
+                    ]
+                },
+                {
+                    title: 'Supply Chain Water Stewardship',
+                    items: [
+                        'Water risk assessments in supply chain',
+                        'Supplier engagement on water conservation',
+                        'Support for suppliers in water-stressed regions',
+                        'Sustainable sourcing from water-responsible suppliers'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Water consumption reduction: 30% decrease target',
+                        'Water recycling rate: 50% of water reused',
+                        'Wastewater treatment: 100% before discharge',
+                        'Community water projects: Number of people with access to clean water',
+                        'Water-stressed operations: Zero negative impact on local water sources'
+                    ]
+                }
+            ]
+        },
+        '11': {
+            title: 'SDG 11: Sustainable Cities and Communities',
+            subtitle: 'Make cities and human settlements inclusive, safe, resilient and sustainable',
+            color: '#FD9D24',
+            sections: [
+                {
+                    title: 'Sustainable Facilities',
+                    items: [
+                        'LEED or equivalent green building certifications for all offices',
+                        'Energy-efficient building systems and smart controls',
+                        'Green roofs and urban biodiversity initiatives',
+                        'Sustainable materials and construction practices',
+                        'Adaptive reuse of existing buildings when possible'
+                    ]
+                },
+                {
+                    title: 'Sustainable Transportation',
+                    items: [
+                        'Public transit subsidies and incentives for employees',
+                        'Bike-to-work programs and secure bike storage',
+                        'Electric vehicle charging stations at all facilities',
+                        'Shuttle services using clean energy vehicles',
+                        'Remote work options to reduce commuting',
+                        'Carpool and vanpool coordination programs'
+                    ]
+                },
+                {
+                    title: 'Community Engagement',
+                    items: [
+                        'Investment in local infrastructure improvements',
+                        'Support for affordable housing initiatives',
+                        'Partnerships with local governments on smart city projects',
+                        'Public space improvements and community amenities',
+                        'Disaster resilience and emergency preparedness programs'
+                    ]
+                },
+                {
+                    title: 'Urban Green Spaces',
+                    items: [
+                        'Creation and maintenance of green spaces',
+                        'Urban tree planting and restoration programs',
+                        'Community gardens and urban agriculture support',
+                        'Public parks and recreation area sponsorships'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Green building certifications: 100% of facilities',
+                        'Employee sustainable commuting: >50% using public transit, bike, or carpool',
+                        'EV charging capacity: Stations available at all major sites',
+                        'Community investment: Projects supported annually',
+                        'Urban greening: Square meters of green space created or maintained'
+                    ]
+                }
+            ]
+        },
+        '14': {
+            title: 'SDG 14: Life Below Water',
+            subtitle: 'Conserve and sustainably use the oceans, seas and marine resources',
+            color: '#0A97D9',
+            sections: [
+                {
+                    title: 'Ocean Plastic Reduction',
+                    items: [
+                        'Elimination of single-use plastics across all operations',
+                        'Plastic-free packaging and product design',
+                        'Support for ocean cleanup initiatives',
+                        'Employee education on plastic pollution',
+                        'Partnerships with organizations like Ocean Conservancy'
+                    ]
+                },
+                {
+                    title: 'Sustainable Sourcing',
+                    items: [
+                        'Sustainable seafood policies (if applicable)',
+                        'Marine Stewardship Council (MSC) certified suppliers',
+                        'Avoidance of products linked to ocean degradation',
+                        'Supply chain transparency for marine resources',
+                        'Support for sustainable fishing communities'
+                    ]
+                },
+                {
+                    title: 'Marine Conservation',
+                    items: [
+                        'Donations to marine conservation organizations',
+                        'Support for marine protected areas',
+                        'Coral reef restoration programs',
+                        'Research partnerships on ocean health',
+                        'Employee volunteer programs for beach cleanups'
+                    ]
+                },
+                {
+                    title: 'Pollution Prevention',
+                    items: [
+                        'Zero discharge of pollutants into waterways',
+                        'Microplastic prevention in products and processes',
+                        'Stormwater management and runoff prevention',
+                        'Chemical management to prevent ocean contamination'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Plastic elimination: 100% single-use plastic removal',
+                        'Ocean cleanup support: Tons of plastic removed annually',
+                        'Sustainable sourcing: 100% MSC-certified seafood (if applicable)',
+                        'Pollution discharge: Zero harmful substances to water',
+                        'Marine conservation funding: Annual donation targets'
+                    ]
+                }
+            ]
+        },
+        '15': {
+            title: 'SDG 15: Life on Land',
+            subtitle: 'Protect, restore and promote sustainable use of terrestrial ecosystems',
+            color: '#56C02B',
+            sections: [
+                {
+                    title: 'Biodiversity Protection',
+                    items: [
+                        'No-net-loss or net-positive biodiversity targets',
+                        'Habitat conservation on company-owned land',
+                        'Wildlife corridors and native species protection',
+                        'Invasive species management and prevention',
+                        'Biodiversity impact assessments for all projects'
+                    ]
+                },
+                {
+                    title: 'Sustainable Land Use',
+                    items: [
+                        'Sustainable forestry and zero-deforestation commitments',
+                        'Responsible land acquisition and development practices',
+                        'Soil health and regeneration programs',
+                        'Integration of natural landscapes in facility design',
+                        'Land restoration and reforestation projects'
+                    ]
+                },
+                {
+                    title: 'Forest Conservation',
+                    items: [
+                        'Forest Stewardship Council (FSC) certified materials',
+                        'Support for reforestation and afforestation projects',
+                        'Partnerships with conservation organizations',
+                        'Employee tree-planting initiatives',
+                        'Protection of old-growth and primary forests'
+                    ]
+                },
+                {
+                    title: 'Ecosystem Restoration',
+                    items: [
+                        'Degraded land rehabilitation programs',
+                        'Wetland conservation and restoration',
+                        'Native plant landscaping at all facilities',
+                        'Pollinator-friendly gardens and habitats',
+                        'Support for ecosystem services research'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Deforestation-free supply chain: 100% compliance',
+                        'FSC certification: 100% of paper and wood products',
+                        'Trees planted: Annual reforestation targets',
+                        'Biodiversity net gain: Positive impact on all projects',
+                        'Land restored: Hectares of degraded land rehabilitated'
+                    ]
+                }
+            ]
+        },
+        '16': {
+            title: 'SDG 16: Peace, Justice and Strong Institutions',
+            subtitle: 'Promote peaceful and inclusive societies, provide access to justice for all',
+            color: '#00689D',
+            sections: [
+                {
+                    title: 'Corporate Governance',
+                    items: [
+                        'Transparent governance structures and decision-making processes',
+                        'Independent board of directors with diverse expertise',
+                        'Regular board evaluations and accountability mechanisms',
+                        'Clear separation of board and management roles',
+                        'Stakeholder engagement in governance matters',
+                        'Public disclosure of governance policies and practices'
+                    ]
+                },
+                {
+                    title: 'Ethics & Compliance',
+                    items: [
+                        'Comprehensive code of conduct for all employees',
+                        'Anti-corruption and anti-bribery policies (FCPA compliance)',
+                        'Regular ethics training for employees and leadership',
+                        'Whistleblower protections and confidential reporting channels',
+                        'Third-party ethics audits and compliance reviews',
+                        'Zero tolerance for fraud, corruption, and unethical behavior'
+                    ]
+                },
+                {
+                    title: 'Human Rights',
+                    items: [
+                        'Human rights policy aligned with UN Guiding Principles',
+                        'Human rights due diligence across operations and supply chain',
+                        'Remediation mechanisms for rights violations',
+                        'Freedom of association and collective bargaining rights',
+                        'Anti-forced labor and anti-child labor commitments',
+                        'Regular human rights impact assessments'
+                    ]
+                },
+                {
+                    title: 'Transparency & Accountability',
+                    items: [
+                        'Annual sustainability and ESG reporting',
+                        'Financial transparency and accurate disclosures',
+                        'Stakeholder grievance mechanisms',
+                        'Regular audits by independent third parties',
+                        'Public disclosure of political contributions and lobbying',
+                        'Data privacy and protection compliance (GDPR, CCPA)'
+                    ]
+                },
+                {
+                    title: 'Community & Social Justice',
+                    items: [
+                        'Support for social justice initiatives and organizations',
+                        'Pro bono services and legal aid support',
+                        'Partnerships with justice and equality organizations',
+                        'Advocacy for inclusive policies and regulations',
+                        'Community safety and security programs'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Ethics training: 100% of employees annually',
+                        'Whistleblower reports: Tracked and resolved transparently',
+                        'Board independence: Majority independent directors',
+                        'Human rights audits: 100% of high-risk suppliers audited',
+                        'Corruption incidents: Zero tolerance, zero incidents target',
+                        'Transparency score: Top quartile in industry rankings'
+                    ]
+                }
+            ]
+        },
+        '17': {
+            title: 'SDG 17: Partnerships for the Goals',
+            subtitle: 'Strengthen the means of implementation and revitalize global partnerships',
+            color: '#19486A',
+            sections: [
+                {
+                    title: 'Multi-Stakeholder Partnerships',
+                    items: [
+                        'Collaborations with NGOs, governments, and international organizations',
+                        'Industry coalitions for sustainability and innovation',
+                        'Academic partnerships for research and development',
+                        'Public-private partnerships for social impact',
+                        'Cross-sector initiatives addressing global challenges'
+                    ]
+                },
+                {
+                    title: 'Knowledge Sharing',
+                    items: [
+                        'Open-source contributions and technology sharing',
+                        'Best practices documentation and dissemination',
+                        'Industry conferences and thought leadership',
+                        'Sustainability reporting and transparency initiatives',
+                        'Collaborative research and innovation programs',
+                        'Mentorship and capacity building for other organizations'
+                    ]
+                },
+                {
+                    title: 'Supply Chain Collaboration',
+                    items: [
+                        'Supplier sustainability development programs',
+                        'Collaborative supplier audits and improvements',
+                        'Technology and expertise sharing with suppliers',
+                        'Joint sustainability targets with key partners',
+                        'Industry-wide standards development participation'
+                    ]
+                },
+                {
+                    title: 'Financial Support',
+                    items: [
+                        'Impact investing and sustainable finance initiatives',
+                        'Grants and funding for SDG-aligned projects',
+                        'Venture capital for social enterprises',
+                        'Corporate philanthropy with measurable impact',
+                        'Employee matching gift programs'
+                    ]
+                },
+                {
+                    title: 'Global Advocacy',
+                    items: [
+                        'Policy advocacy for sustainable development',
+                        'Support for international agreements (Paris Agreement, SDGs)',
+                        'Industry leadership on ESG standards',
+                        'Participation in global initiatives (UN Global Compact, etc.)',
+                        'Amplification of SDG awareness and commitment'
+                    ]
+                },
+                {
+                    title: 'Key Performance Indicators',
+                    items: [
+                        'Active partnerships: Number and impact of collaborations',
+                        'Knowledge sharing: Publications, open-source contributions',
+                        'Supplier engagement: Percentage participating in sustainability programs',
+                        'SDG investment: Annual funding for SDG-aligned initiatives',
+                        'Industry leadership: Participation in standards-setting bodies',
+                        'Employee engagement: Volunteer hours and skills-based volunteering'
+                    ]
+                }
+            ]
         }
     };
 
