@@ -193,6 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const successMessage = document.getElementById('success-message');
     const loadingStatus = document.getElementById('loading-status');
 
+    // Store form data for report generation
+    let reportData = {};
+
     if (esgForm) {
         esgForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -201,6 +204,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const companyName = document.getElementById('company-name').value;
             const companyWebsite = document.getElementById('company-website').value;
             const companyDescription = document.getElementById('company-description').value;
+            const additionalInfo = document.getElementById('additional-info').value;
+
+            // Store data for report generation
+            reportData = {
+                companyName,
+                companyWebsite,
+                companyDescription,
+                additionalInfo,
+                jurisdiction: selectedJurisdiction,
+                jurisdictionTitle: jurisdictionData[selectedJurisdiction].title,
+                standards: jurisdictionData[selectedJurisdiction].standards,
+                generatedDate: new Date()
+            };
 
             // Hide form, show result with loading
             companyInputSection.style.display = 'none';
@@ -247,6 +263,230 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Function to generate HTML report
+    function generateHTMLReport(data) {
+        const standardsList = data.standards.map(s => `<li>${s}</li>`).join('');
+
+        return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Report - ${data.companyName}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f9fafb;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        .report-meta {
+            background: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .report-meta p {
+            margin: 0.5rem 0;
+        }
+        .report-meta strong {
+            color: #2563eb;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #2563eb;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: #1f2937;
+            margin: 1.5rem 0 1rem;
+        }
+        p {
+            margin: 1rem 0;
+            color: #6b7280;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        li {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: #f9fafb;
+            border-left: 4px solid #10b981;
+            border-radius: 0.25rem;
+        }
+        li::before {
+            content: '✓ ';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .section {
+            margin: 2rem 0;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">AI for Good</div>
+            <h1>ESG Compliance Report</h1>
+            <div class="badge">AUTOMATED ANALYSIS REPORT</div>
+        </div>
+
+        <div class="report-meta">
+            <p><strong>Company:</strong> ${data.companyName}</p>
+            <p><strong>Website:</strong> <a href="${data.companyWebsite}">${data.companyWebsite}</a></p>
+            <p><strong>Jurisdiction:</strong> ${data.jurisdictionTitle}</p>
+            <p><strong>Report Generated:</strong> ${data.generatedDate.toLocaleString()}</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>This ESG (Environmental, Social, and Governance) compliance report has been automatically generated for <strong>${data.companyName}</strong> based on AI-powered analysis of company data and tailored to the specific requirements of <strong>${data.jurisdictionTitle}</strong>.</p>
+            <p>The report analyzes the company's current ESG initiatives and maps them against the applicable regulatory frameworks and reporting standards for the selected jurisdiction.</p>
+        </div>
+
+        <div class="section">
+            <h2>Company Overview</h2>
+            <h3>Business Description</h3>
+            ${data.companyDescription ? `<p>${data.companyDescription}</p>` : '<p><em>No description provided</em></p>'}
+
+            ${data.additionalInfo ? `
+            <h3>Additional Information</h3>
+            <p>${data.additionalInfo}</p>
+            ` : ''}
+        </div>
+
+        <div class="section">
+            <h2>Applicable ESG Reporting Standards</h2>
+            <p>Based on your selected jurisdiction (<strong>${data.jurisdictionTitle}</strong>), the following ESG reporting standards and frameworks apply to your organization:</p>
+            <ul>
+                ${standardsList}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Compliance Recommendations</h2>
+            <h3>Environmental (E)</h3>
+            <ul>
+                <li>Establish carbon footprint measurement and reduction targets</li>
+                <li>Implement energy efficiency programs and renewable energy adoption</li>
+                <li>Develop waste management and circular economy initiatives</li>
+                <li>Monitor and report water usage and conservation efforts</li>
+            </ul>
+
+            <h3>Social (S)</h3>
+            <ul>
+                <li>Ensure workplace diversity, equity, and inclusion programs</li>
+                <li>Maintain employee health, safety, and wellbeing standards</li>
+                <li>Engage in community development and social impact projects</li>
+                <li>Uphold human rights and fair labor practices across supply chain</li>
+            </ul>
+
+            <h3>Governance (G)</h3>
+            <ul>
+                <li>Implement transparent corporate governance structures</li>
+                <li>Establish board diversity and independence protocols</li>
+                <li>Ensure ethical business practices and anti-corruption measures</li>
+                <li>Maintain stakeholder engagement and accountability frameworks</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Next Steps</h2>
+            <ol style="list-style: decimal; padding-left: 2rem;">
+                <li style="border-left: none; background: transparent; margin: 0.75rem 0;">
+                    <strong>Data Collection:</strong> Gather comprehensive data across all ESG metrics relevant to your jurisdiction
+                </li>
+                <li style="border-left: none; background: transparent; margin: 0.75rem 0;">
+                    <strong>Gap Analysis:</strong> Identify areas where current practices don't meet reporting requirements
+                </li>
+                <li style="border-left: none; background: transparent; margin: 0.75rem 0;">
+                    <strong>Action Planning:</strong> Develop targeted initiatives to address compliance gaps
+                </li>
+                <li style="border-left: none; background: transparent; margin: 0.75rem 0;">
+                    <strong>Implementation:</strong> Execute ESG improvement programs with measurable KPIs
+                </li>
+                <li style="border-left: none; background: transparent; margin: 0.75rem 0;">
+                    <strong>Reporting:</strong> Prepare comprehensive disclosure documents according to applicable standards
+                </li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p>This report was generated by AI for Good - ESG Reporting Platform</p>
+            <p>For more information, visit our platform or contact our ESG specialists</p>
+            <p>&copy; ${new Date().getFullYear()} AI for Good. Making sustainability reporting accessible to all.</p>
+        </div>
+    </div>
+</body>
+</html>`;
+    }
+
     // Action buttons
     const downloadBtn = document.getElementById('download-report');
     const viewPreviewBtn = document.getElementById('view-preview');
@@ -254,13 +494,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
-            alert('Demo: In production, this would download a PDF report tailored to ' + jurisdictionData[selectedJurisdiction].title);
+            // Generate the HTML report
+            const reportHTML = generateHTMLReport(reportData);
+
+            // Create a Blob from the HTML
+            const blob = new Blob([reportHTML], { type: 'text/html' });
+
+            // Create a download link
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ESG_Report_${reportData.companyName.replace(/\s+/g, '_')}_${reportData.jurisdiction.toUpperCase()}_${Date.now()}.html`;
+
+            // Trigger download
+            document.body.appendChild(a);
+            a.click();
+
+            // Cleanup
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         });
     }
 
     if (viewPreviewBtn) {
         viewPreviewBtn.addEventListener('click', function() {
-            alert('Demo: In production, this would open a preview of your ESG report with detailed compliance information, metrics, and recommendations.');
+            // Generate the HTML report
+            const reportHTML = generateHTMLReport(reportData);
+
+            // Open in new window
+            const newWindow = window.open('', '_blank');
+            newWindow.document.write(reportHTML);
+            newWindow.document.close();
         });
     }
 
