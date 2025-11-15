@@ -464,30 +464,145 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>UN Sustainable Development Goals (SDGs) Alignment</h2>
             <p>Based on your company's activities and ESG initiatives, here's how <strong>${data.companyName}</strong> contributes to the United Nations Sustainable Development Goals:</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #E5243B; border-radius: 0.5rem;">
-                    <h3 style="color: #E5243B; margin-bottom: 0.5rem;">SDG 7: Affordable and Clean Energy</h3>
-                    <p style="margin: 0;">Potential alignment through renewable energy adoption and energy efficiency programs.</p>
+            <div style="margin-top: 2rem; margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem; color: #1f2937; margin-bottom: 1.5rem; text-align: center;">All 17 UN Sustainable Development Goals</h3>
+                <p style="text-align: center; color: #6b7280; margin-bottom: 2rem; font-size: 0.95rem;">
+                    <strong style="color: #2563eb;">Highlighted in color:</strong> Goals aligned with your company's activities |
+                    <strong style="color: #9ca3af;">Shown in grey:</strong> Goals for potential future alignment
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                    <!-- SDG 1 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">1</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">No Poverty</div>
+                    </div>
+
+                    <!-- SDG 2 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">2</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Zero Hunger</div>
+                    </div>
+
+                    <!-- SDG 3 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">3</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Good Health</div>
+                    </div>
+
+                    <!-- SDG 4 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">4</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Quality Education</div>
+                    </div>
+
+                    <!-- SDG 5 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">5</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Gender Equality</div>
+                    </div>
+
+                    <!-- SDG 6 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">6</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Clean Water</div>
+                    </div>
+
+                    <!-- SDG 7 - Highlighted -->
+                    <div style="background: #FCC30B; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">7</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Clean Energy</div>
+                    </div>
+
+                    <!-- SDG 8 - Highlighted -->
+                    <div style="background: #A21942; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">8</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Decent Work</div>
+                    </div>
+
+                    <!-- SDG 9 - Highlighted -->
+                    <div style="background: #FD6925; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">9</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Innovation</div>
+                    </div>
+
+                    <!-- SDG 10 - Highlighted -->
+                    <div style="background: #DD1367; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">10</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Reduced Inequalities</div>
+                    </div>
+
+                    <!-- SDG 11 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">11</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Sustainable Cities</div>
+                    </div>
+
+                    <!-- SDG 12 - Highlighted -->
+                    <div style="background: #BF8B2E; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">12</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Responsible Consumption</div>
+                    </div>
+
+                    <!-- SDG 13 - Highlighted -->
+                    <div style="background: #3F7E44; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">13</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Climate Action</div>
+                    </div>
+
+                    <!-- SDG 14 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">14</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Life Below Water</div>
+                    </div>
+
+                    <!-- SDG 15 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">15</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Life on Land</div>
+                    </div>
+
+                    <!-- SDG 16 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">16</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Peace & Justice</div>
+                    </div>
+
+                    <!-- SDG 17 -->
+                    <div style="background: #ccc; padding: 1rem; border-radius: 0.5rem; text-align: center; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">17</div>
+                        <div style="font-size: 0.75rem; font-weight: 600; color: white; line-height: 1.2;">Partnerships</div>
+                    </div>
                 </div>
-                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #4C9F38; border-radius: 0.5rem;">
-                    <h3 style="color: #4C9F38; margin-bottom: 0.5rem;">SDG 8: Decent Work and Economic Growth</h3>
-                    <p style="margin: 0;">Contribution through fair labor practices, employee wellbeing, and sustainable economic activities.</p>
-                </div>
-                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #FD6925; border-radius: 0.5rem;">
-                    <h3 style="color: #FD6925; margin-bottom: 0.5rem;">SDG 9: Industry, Innovation and Infrastructure</h3>
-                    <p style="margin: 0;">Support through innovative business practices and sustainable infrastructure development.</p>
-                </div>
-                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #DD1367; border-radius: 0.5rem;">
-                    <h3 style="color: #DD1367; margin-bottom: 0.5rem;">SDG 10: Reduced Inequalities</h3>
-                    <p style="margin: 0;">Advancement through diversity, equity, and inclusion initiatives in the workplace.</p>
-                </div>
-                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #FD9D24; border-radius: 0.5rem;">
-                    <h3 style="color: #FD9D24; margin-bottom: 0.5rem;">SDG 12: Responsible Consumption and Production</h3>
-                    <p style="margin: 0;">Implementation of circular economy principles and waste reduction strategies.</p>
-                </div>
-                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #3F7E44; border-radius: 0.5rem;">
-                    <h3 style="color: #3F7E44; margin-bottom: 0.5rem;">SDG 13: Climate Action</h3>
-                    <p style="margin: 0;">Direct contribution through carbon reduction targets and climate mitigation efforts.</p>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="font-size: 1.3rem; color: #1f2937; margin-bottom: 1rem;">Key SDG Contributions</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="padding: 1.5rem; background: #FFF9E6; border-left: 4px solid #FCC30B; border-radius: 0.5rem;">
+                        <h4 style="color: #FCC30B; margin-bottom: 0.5rem; font-size: 1.1rem;">SDG 7: Affordable and Clean Energy</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #6b7280;">Potential alignment through renewable energy adoption and energy efficiency programs.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: #FFF0F5; border-left: 4px solid #A21942; border-radius: 0.5rem;">
+                        <h4 style="color: #A21942; margin-bottom: 0.5rem; font-size: 1.1rem;">SDG 8: Decent Work and Economic Growth</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #6b7280;">Contribution through fair labor practices, employee wellbeing, and sustainable economic activities.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: #FFF5F0; border-left: 4px solid #FD6925; border-radius: 0.5rem;">
+                        <h4 style="color: #FD6925; margin-bottom: 0.5rem; font-size: 1.1rem;">SDG 9: Industry, Innovation and Infrastructure</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #6b7280;">Support through innovative business practices and sustainable infrastructure development.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: #FFF0F8; border-left: 4px solid #DD1367; border-radius: 0.5rem;">
+                        <h4 style="color: #DD1367; margin-bottom: 0.5rem; font-size: 1.1rem;">SDG 10: Reduced Inequalities</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #6b7280;">Advancement through diversity, equity, and inclusion initiatives in the workplace.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: #FFF9F0; border-left: 4px solid #BF8B2E; border-radius: 0.5rem;">
+                        <h4 style="color: #BF8B2E; margin-bottom: 0.5rem; font-size: 1.1rem;">SDG 12: Responsible Consumption and Production</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #6b7280;">Implementation of circular economy principles and waste reduction strategies.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: #F0F8F0; border-left: 4px solid #3F7E44; border-radius: 0.5rem;">
+                        <h4 style="color: #3F7E44; margin-bottom: 0.5rem; font-size: 1.1rem;">SDG 13: Climate Action</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #6b7280;">Direct contribution through carbon reduction targets and climate mitigation efforts.</p>
+                    </div>
                 </div>
             </div>
 
