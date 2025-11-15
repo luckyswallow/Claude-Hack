@@ -141,6 +141,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: 'TCFD Recommendations', url: 'https://www.fsb-tcfd.org/' },
                 { name: 'CDP (Carbon Disclosure Project)', url: 'https://www.cdp.net/' }
             ]
+        },
+        other: {
+            title: 'Other Jurisdictions ESG Reporting',
+            standards: [
+                { name: 'GRI Standards (Universal Framework)', url: 'https://www.globalreporting.org/standards/' },
+                { name: 'ISSB Standards (IFRS S1 & S2)', url: 'https://www.ifrs.org/groups/international-sustainability-standards-board/' },
+                { name: 'ISO 26000 Social Responsibility', url: 'https://www.iso.org/iso-26000-social-responsibility.html' },
+                { name: 'OECD Guidelines for Multinational Enterprises', url: 'https://www.oecd.org/corporate/mne/' },
+                { name: 'UN Global Compact Principles', url: 'https://www.unglobalcompact.org/' }
+            ]
         }
     };
 
