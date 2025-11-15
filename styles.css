@@ -356,6 +356,63 @@ header {
     max-width: 600px;
 }
 
+/* Report Type Selector */
+.report-type-selector {
+    margin-bottom: 4rem;
+}
+
+.report-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.report-type-card {
+    background: var(--bg-white);
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    text-align: center;
+}
+
+.report-type-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.report-type-card.active {
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(16, 185, 129, 0.08));
+    transform: translateY(-5px);
+}
+
+.report-type-card h4 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.report-type-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.report-type-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.report-type-card ul li {
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
 .jurisdiction-selector {
     display: flex;
     justify-content: center;

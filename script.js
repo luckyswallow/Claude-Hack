@@ -144,6 +144,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Report type selection
+    const reportTypeCards = document.querySelectorAll('.report-type-card');
+    let selectedReportType = 'esg'; // Default to full ESG report
+
+    reportTypeCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove active class from all cards
+            reportTypeCards.forEach(c => c.classList.remove('active'));
+
+            // Add active class to clicked card
+            this.classList.add('active');
+
+            // Get selected report type
+            selectedReportType = this.getAttribute('data-report-type');
+        });
+    });
+
     // Jurisdiction selection
     const jurisdictionBtns = document.querySelectorAll('.jurisdiction-btn');
     const detailsContainer = document.getElementById('jurisdiction-details');
@@ -217,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 jurisdiction: selectedJurisdiction,
                 jurisdictionTitle: jurisdictionData[selectedJurisdiction].title,
                 standards: jurisdictionData[selectedJurisdiction].standards,
+                reportType: selectedReportType,
                 generatedDate: new Date()
             };
 
@@ -263,6 +281,483 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('report-date').textContent = new Date().toLocaleString();
             }, 5000);
         });
+    }
+
+    // Function to generate Environmental (E) Report
+    function generateEnvironmentalReport(data) {
+        const standardsList = data.standards.map(s =>
+            `<li><a href="${s.url}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">${s.name} →</a></li>`
+        ).join('');
+
+        return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Report - ${data.companyName}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; }
+        .header { text-align: center; border-bottom: 4px solid #10b981; padding-bottom: 2rem; margin-bottom: 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #10b981; margin-bottom: 0.5rem; }
+        h1 { font-size: 2.5rem; color: #1f2937; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; }
+        .report-meta { background: #f0fdf4; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #10b981; }
+        .report-meta p { margin: 0.5rem 0; }
+        .report-meta strong { color: #10b981; }
+        h2 { font-size: 1.8rem; color: #10b981; margin: 2rem 0 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.3rem; color: #1f2937; margin: 1.5rem 0 1rem; }
+        p { margin: 1rem 0; color: #6b7280; }
+        ul { list-style: none; padding: 0; margin: 1rem 0; }
+        li { padding: 0.75rem; margin: 0.5rem 0; background: #f0fdf4; border-left: 4px solid #10b981; border-radius: 0.25rem; }
+        li::before { content: '✓ '; color: #10b981; font-weight: bold; margin-right: 0.5rem; }
+        .section { margin: 2rem 0; }
+        .footer { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">ESGSync</div>
+            <h1>🌱 Environmental Report</h1>
+            <div class="badge">ENVIRONMENTAL ANALYSIS</div>
+        </div>
+
+        <div class="report-meta">
+            <p><strong>Company:</strong> ${data.companyName}</p>
+            <p><strong>Website:</strong> <a href="${data.companyWebsite}">${data.companyWebsite}</a></p>
+            <p><strong>Jurisdiction:</strong> ${data.jurisdictionTitle}</p>
+            <p><strong>Report Generated:</strong> ${data.generatedDate.toLocaleString()}</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>This Environmental (E) report provides a comprehensive assessment of <strong>${data.companyName}</strong>'s environmental performance, climate impact, and sustainability initiatives tailored to <strong>${data.jurisdictionTitle}</strong> requirements.</p>
+        </div>
+
+        <div class="section">
+            <h2>Climate Change & Emissions</h2>
+            <h3>Greenhouse Gas Emissions</h3>
+            <ul>
+                <li>Scope 1 emissions tracking and reduction targets</li>
+                <li>Scope 2 emissions from purchased energy</li>
+                <li>Scope 3 value chain emissions assessment</li>
+                <li>Carbon footprint measurement and reporting</li>
+                <li>Net-zero commitments aligned with Paris Agreement</li>
+            </ul>
+
+            <h3>Climate Action Initiatives</h3>
+            <ul>
+                <li>Science-based emissions reduction targets</li>
+                <li>Renewable energy transition roadmap</li>
+                <li>Carbon offset and removal projects</li>
+                <li>Climate risk assessment and adaptation planning</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Energy Management</h2>
+            <h3>Energy Efficiency</h3>
+            <ul>
+                <li>Energy consumption monitoring and reduction programs</li>
+                <li>Building energy efficiency upgrades</li>
+                <li>Energy-efficient equipment and technology adoption</li>
+                <li>Employee energy conservation awareness</li>
+            </ul>
+
+            <h3>Renewable Energy</h3>
+            <ul>
+                <li>Renewable energy procurement (solar, wind, hydro)</li>
+                <li>On-site renewable energy generation</li>
+                <li>100% renewable electricity targets</li>
+                <li>Clean energy partnerships and investments</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Resource Management</h2>
+            <h3>Water Stewardship</h3>
+            <ul>
+                <li>Water consumption monitoring and reduction</li>
+                <li>Wastewater treatment and recycling</li>
+                <li>Water risk assessment in operations and supply chain</li>
+                <li>Community water access support programs</li>
+            </ul>
+
+            <h3>Waste Management</h3>
+            <ul>
+                <li>Waste reduction and circular economy practices</li>
+                <li>Recycling and composting programs</li>
+                <li>Zero waste to landfill targets</li>
+                <li>Hazardous waste proper handling and disposal</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Biodiversity & Ecosystems</h2>
+            <ul>
+                <li>Biodiversity impact assessments</li>
+                <li>Habitat conservation and restoration</li>
+                <li>No-net-loss or net-positive biodiversity commitments</li>
+                <li>Sustainable land use and deforestation-free supply chains</li>
+                <li>Support for ecosystem services and nature-based solutions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Applicable Environmental Standards</h2>
+            <p>Based on <strong>${data.jurisdictionTitle}</strong>:</p>
+            <ul>
+                ${standardsList}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Key Performance Indicators</h2>
+            <ul>
+                <li><strong>GHG Emissions Reduction:</strong> 50% by 2030, Net-Zero by 2050</li>
+                <li><strong>Renewable Energy:</strong> 100% by 2030</li>
+                <li><strong>Water Consumption:</strong> 30% reduction target</li>
+                <li><strong>Waste Diversion:</strong> 90%+ from landfills</li>
+                <li><strong>Biodiversity:</strong> Net-positive impact on all projects</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>This Environmental report was generated by ESGSync - ESG Reporting Platform</p>
+            <p>&copy; ${new Date().getFullYear()} ESGSync. Making sustainability reporting accessible to all.</p>
+        </div>
+    </div>
+</body>
+</html>`;
+    }
+
+    // Function to generate Social (S) Report
+    function generateSocialReport(data) {
+        const standardsList = data.standards.map(s =>
+            `<li><a href="${s.url}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">${s.name} →</a></li>`
+        ).join('');
+
+        return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Report - ${data.companyName}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; }
+        .header { text-align: center; border-bottom: 4px solid #f59e0b; padding-bottom: 2rem; margin-bottom: 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.5rem; }
+        h1 { font-size: 2.5rem; color: #1f2937; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: #f59e0b; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; }
+        .report-meta { background: #fffbeb; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #f59e0b; }
+        .report-meta p { margin: 0.5rem 0; }
+        .report-meta strong { color: #f59e0b; }
+        h2 { font-size: 1.8rem; color: #f59e0b; margin: 2rem 0 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.3rem; color: #1f2937; margin: 1.5rem 0 1rem; }
+        p { margin: 1rem 0; color: #6b7280; }
+        ul { list-style: none; padding: 0; margin: 1rem 0; }
+        li { padding: 0.75rem; margin: 0.5rem 0; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0.25rem; }
+        li::before { content: '✓ '; color: #f59e0b; font-weight: bold; margin-right: 0.5rem; }
+        .section { margin: 2rem 0; }
+        .footer { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">ESGSync</div>
+            <h1>👥 Social Report</h1>
+            <div class="badge">SOCIAL IMPACT ANALYSIS</div>
+        </div>
+
+        <div class="report-meta">
+            <p><strong>Company:</strong> ${data.companyName}</p>
+            <p><strong>Website:</strong> <a href="${data.companyWebsite}">${data.companyWebsite}</a></p>
+            <p><strong>Jurisdiction:</strong> ${data.jurisdictionTitle}</p>
+            <p><strong>Report Generated:</strong> ${data.generatedDate.toLocaleString()}</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>This Social (S) report evaluates <strong>${data.companyName}</strong>'s commitment to employee wellbeing, diversity and inclusion, labor practices, and community engagement in compliance with <strong>${data.jurisdictionTitle}</strong> standards.</p>
+        </div>
+
+        <div class="section">
+            <h2>Employee Wellbeing & Labor Practices</h2>
+            <h3>Fair Employment</h3>
+            <ul>
+                <li>Living wage compliance for all employees and contractors</li>
+                <li>Comprehensive benefits including health, dental, vision, and retirement</li>
+                <li>Equal pay for equal work with regular pay equity audits</li>
+                <li>Transparent salary bands and compensation frameworks</li>
+                <li>Safe working conditions and health & safety protocols</li>
+            </ul>
+
+            <h3>Work-Life Balance</h3>
+            <ul>
+                <li>Flexible working arrangements and remote work options</li>
+                <li>Generous paid time off and parental leave policies</li>
+                <li>Mental health support and Employee Assistance Programs</li>
+                <li>Reasonable working hours with overtime compensation</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Diversity, Equity & Inclusion</h2>
+            <h3>Workforce Diversity</h3>
+            <ul>
+                <li>Diverse hiring practices across all demographics</li>
+                <li>Women in leadership targets (40-60% representation)</li>
+                <li>Board diversity and independence commitments</li>
+                <li>Inclusive workplace culture and anti-discrimination policies</li>
+                <li>Employee resource groups and affinity networks</li>
+            </ul>
+
+            <h3>Gender Equality</h3>
+            <ul>
+                <li>Gender pay gap targets (<2% across all levels)</li>
+                <li>Paid parental leave for all genders</li>
+                <li>Anti-harassment and safe workplace policies</li>
+                <li>Promotion equity and career development for women</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Training & Development</h2>
+            <ul>
+                <li>40+ hours of training per employee annually</li>
+                <li>Tuition reimbursement and continuing education support</li>
+                <li>Leadership development and mentorship programs</li>
+                <li>Skills training and professional certification support</li>
+                <li>Career advancement pathways for all employees</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Community Engagement</h2>
+            <h3>Social Impact</h3>
+            <ul>
+                <li>Community investment programs (1-2% of annual profits)</li>
+                <li>Local hiring from economically disadvantaged areas</li>
+                <li>Volunteer programs and paid volunteer time off</li>
+                <li>Support for education, health, and social services</li>
+            </ul>
+
+            <h3>Supply Chain Responsibility</h3>
+            <ul>
+                <li>Supplier diversity programs (minority-owned, women-owned businesses)</li>
+                <li>Fair labor practices throughout supply chain</li>
+                <li>Human rights due diligence and audits</li>
+                <li>Anti-forced labor and anti-child labor commitments</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Applicable Social Standards</h2>
+            <p>Based on <strong>${data.jurisdictionTitle}</strong>:</p>
+            <ul>
+                ${standardsList}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Key Performance Indicators</h2>
+            <ul>
+                <li><strong>Employee Retention:</strong> >85% target</li>
+                <li><strong>Gender Pay Gap:</strong> <2% across all levels</li>
+                <li><strong>Workplace Diversity:</strong> 50% diverse representation</li>
+                <li><strong>Employee Satisfaction:</strong> >4.0/5.0 score</li>
+                <li><strong>Training Hours:</strong> 40+ hours per employee annually</li>
+                <li><strong>Community Investment:</strong> 1-2% of annual profits</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>This Social report was generated by ESGSync - ESG Reporting Platform</p>
+            <p>&copy; ${new Date().getFullYear()} ESGSync. Making sustainability reporting accessible to all.</p>
+        </div>
+    </div>
+</body>
+</html>`;
+    }
+
+    // Function to generate Governance (G) Report
+    function generateGovernanceReport(data) {
+        const standardsList = data.standards.map(s =>
+            `<li><a href="${s.url}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">${s.name} →</a></li>`
+        ).join('');
+
+        return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance Report - ${data.companyName}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; }
+        .header { text-align: center; border-bottom: 4px solid #8b5cf6; padding-bottom: 2rem; margin-bottom: 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #8b5cf6; margin-bottom: 0.5rem; }
+        h1 { font-size: 2.5rem; color: #1f2937; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: #8b5cf6; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; }
+        .report-meta { background: #f5f3ff; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #8b5cf6; }
+        .report-meta p { margin: 0.5rem 0; }
+        .report-meta strong { color: #8b5cf6; }
+        h2 { font-size: 1.8rem; color: #8b5cf6; margin: 2rem 0 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.3rem; color: #1f2937; margin: 1.5rem 0 1rem; }
+        p { margin: 1rem 0; color: #6b7280; }
+        ul { list-style: none; padding: 0; margin: 1rem 0; }
+        li { padding: 0.75rem; margin: 0.5rem 0; background: #f5f3ff; border-left: 4px solid #8b5cf6; border-radius: 0.25rem; }
+        li::before { content: '✓ '; color: #8b5cf6; font-weight: bold; margin-right: 0.5rem; }
+        .section { margin: 2rem 0; }
+        .footer { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">ESGSync</div>
+            <h1>⚖️ Governance Report</h1>
+            <div class="badge">GOVERNANCE & ETHICS ANALYSIS</div>
+        </div>
+
+        <div class="report-meta">
+            <p><strong>Company:</strong> ${data.companyName}</p>
+            <p><strong>Website:</strong> <a href="${data.companyWebsite}">${data.companyWebsite}</a></p>
+            <p><strong>Jurisdiction:</strong> ${data.jurisdictionTitle}</p>
+            <p><strong>Report Generated:</strong> ${data.generatedDate.toLocaleString()}</p>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>This Governance (G) report assesses <strong>${data.companyName}</strong>'s corporate governance structures, ethics and compliance programs, transparency, and accountability mechanisms in accordance with <strong>${data.jurisdictionTitle}</strong> requirements.</p>
+        </div>
+
+        <div class="section">
+            <h2>Board Structure & Independence</h2>
+            <h3>Board Composition</h3>
+            <ul>
+                <li>Independent board of directors with diverse expertise</li>
+                <li>Majority independent directors (non-executive)</li>
+                <li>Board diversity targets (gender, ethnicity, age, skills)</li>
+                <li>Clear separation of board and management roles</li>
+                <li>Regular board evaluations and performance assessments</li>
+            </ul>
+
+            <h3>Board Committees</h3>
+            <ul>
+                <li>Audit committee for financial oversight</li>
+                <li>Compensation committee for executive pay</li>
+                <li>Nominating and governance committee</li>
+                <li>Risk management committee</li>
+                <li>Sustainability/ESG committee</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Ethics & Compliance</h2>
+            <h3>Code of Conduct</h3>
+            <ul>
+                <li>Comprehensive code of conduct for all employees</li>
+                <li>Anti-corruption and anti-bribery policies (FCPA, UK Bribery Act compliance)</li>
+                <li>Zero tolerance for fraud, corruption, and unethical behavior</li>
+                <li>Regular ethics training for all employees (100% annually)</li>
+            </ul>
+
+            <h3>Whistleblower Protection</h3>
+            <ul>
+                <li>Confidential whistleblower hotline and reporting channels</li>
+                <li>Protection from retaliation for good-faith reports</li>
+                <li>Independent investigation of ethics violations</li>
+                <li>Transparent tracking and resolution of reports</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Risk Management</h2>
+            <ul>
+                <li>Enterprise risk management framework</li>
+                <li>Climate and ESG risk integration</li>
+                <li>Cybersecurity and data privacy programs</li>
+                <li>Business continuity and crisis management planning</li>
+                <li>Regular risk assessments and audits</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Transparency & Accountability</h2>
+            <h3>Disclosure & Reporting</h3>
+            <ul>
+                <li>Annual sustainability and ESG reporting</li>
+                <li>Financial transparency and accurate disclosures</li>
+                <li>Public disclosure of political contributions and lobbying</li>
+                <li>Data privacy compliance (GDPR, CCPA, etc.)</li>
+                <li>Regular third-party audits and certifications</li>
+            </ul>
+
+            <h3>Stakeholder Engagement</h3>
+            <ul>
+                <li>Shareholder rights and voting mechanisms</li>
+                <li>Stakeholder grievance mechanisms</li>
+                <li>Regular investor and stakeholder communications</li>
+                <li>Public consultation on material issues</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Human Rights & Labor Standards</h2>
+            <ul>
+                <li>Human rights policy aligned with UN Guiding Principles</li>
+                <li>Human rights due diligence across operations and supply chain</li>
+                <li>Freedom of association and collective bargaining rights</li>
+                <li>Anti-forced labor and anti-child labor commitments</li>
+                <li>Remediation mechanisms for rights violations</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Executive Compensation</h2>
+            <ul>
+                <li>Transparent executive compensation disclosure</li>
+                <li>Pay-for-performance alignment with long-term value creation</li>
+                <li>CEO pay ratio disclosure</li>
+                <li>ESG metrics integrated into executive compensation</li>
+                <li>Clawback provisions for misconduct</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Applicable Governance Standards</h2>
+            <p>Based on <strong>${data.jurisdictionTitle}</strong>:</p>
+            <ul>
+                ${standardsList}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Key Performance Indicators</h2>
+            <ul>
+                <li><strong>Board Independence:</strong> Majority independent directors</li>
+                <li><strong>Board Diversity:</strong> 30%+ gender diversity minimum</li>
+                <li><strong>Ethics Training:</strong> 100% of employees annually</li>
+                <li><strong>Corruption Incidents:</strong> Zero tolerance target</li>
+                <li><strong>Data Breaches:</strong> Zero incidents target</li>
+                <li><strong>Transparency Score:</strong> Top quartile in industry rankings</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>This Governance report was generated by ESGSync - ESG Reporting Platform</p>
+            <p>&copy; ${new Date().getFullYear()} ESGSync. Making sustainability reporting accessible to all.</p>
+        </div>
+    </div>
+</body>
+</html>`;
     }
 
     // Function to generate HTML report
@@ -1749,8 +2244,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
-            // Generate the HTML report
-            const reportHTML = generateHTMLReport(reportData);
+            // Generate the HTML report based on report type
+            let reportHTML;
+            let reportTypeLabel;
+
+            switch(reportData.reportType) {
+                case 'e':
+                    reportHTML = generateEnvironmentalReport(reportData);
+                    reportTypeLabel = 'Environmental';
+                    break;
+                case 's':
+                    reportHTML = generateSocialReport(reportData);
+                    reportTypeLabel = 'Social';
+                    break;
+                case 'g':
+                    reportHTML = generateGovernanceReport(reportData);
+                    reportTypeLabel = 'Governance';
+                    break;
+                default:
+                    reportHTML = generateHTMLReport(reportData);
+                    reportTypeLabel = 'ESG';
+            }
 
             // Create a Blob from the HTML
             const blob = new Blob([reportHTML], { type: 'text/html' });
@@ -1759,7 +2273,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `ESG_Report_${reportData.companyName.replace(/\s+/g, '_')}_${reportData.jurisdiction.toUpperCase()}_${Date.now()}.html`;
+            a.download = `${reportTypeLabel}_Report_${reportData.companyName.replace(/\s+/g, '_')}_${reportData.jurisdiction.toUpperCase()}_${Date.now()}.html`;
 
             // Trigger download
             document.body.appendChild(a);
@@ -1773,8 +2287,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (viewPreviewBtn) {
         viewPreviewBtn.addEventListener('click', function() {
-            // Generate the HTML report
-            const reportHTML = generateHTMLReport(reportData);
+            // Generate the HTML report based on report type
+            let reportHTML;
+
+            switch(reportData.reportType) {
+                case 'e':
+                    reportHTML = generateEnvironmentalReport(reportData);
+                    break;
+                case 's':
+                    reportHTML = generateSocialReport(reportData);
+                    break;
+                case 'g':
+                    reportHTML = generateGovernanceReport(reportData);
+                    break;
+                default:
+                    reportHTML = generateHTMLReport(reportData);
+            }
 
             // Open in new window
             const newWindow = window.open('', '_blank');
