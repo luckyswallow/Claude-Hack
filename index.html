@@ -224,6 +224,71 @@
                     <p>Click on any country or region above to view tailored compliance requirements.</p>
                 </div>
             </div>
+
+            <!-- Company Input Form -->
+            <div class="company-input-section" id="company-input-section" style="display: none;">
+                <h3>Generate Your Tailored ESG Report</h3>
+                <p class="input-instruction">Provide your company information to generate a customized ESG report</p>
+
+                <form id="esg-form" class="esg-form">
+                    <div class="form-group">
+                        <label for="company-name">Company Name *</label>
+                        <input type="text" id="company-name" name="company-name" placeholder="e.g., Acme Corporation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company-website">Company Website or Profile URL *</label>
+                        <input type="url" id="company-website" name="company-website" placeholder="https://www.example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company-description">Company Description & ESG Initiatives</label>
+                        <textarea id="company-description" name="company-description" rows="6" placeholder="Describe your company's activities, sustainability initiatives, environmental programs, social impact projects, governance structure, etc.&#10;&#10;Example: We are a renewable energy company focused on solar power solutions. Our ESG initiatives include carbon-neutral operations by 2025, employee diversity programs, and community renewable energy education."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-info">Additional Documents or Information (Optional)</label>
+                        <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any additional context, annual reports, sustainability goals, or specific data you'd like to include..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Generate ESG Report</span>
+                        <span class="button-icon">→</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Report Generation Result -->
+            <div class="report-result" id="report-result" style="display: none;">
+                <div class="result-content">
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <h3>Analyzing your company data...</h3>
+                        <p class="loading-status" id="loading-status">Initializing AI analysis</p>
+                    </div>
+
+                    <div class="success-message" id="success-message" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Your ESG Report is Ready!</h3>
+                        <p class="report-info">
+                            <strong>Report Type:</strong> <span id="report-jurisdiction"></span><br>
+                            <strong>Company:</strong> <span id="report-company"></span><br>
+                            <strong>Generated:</strong> <span id="report-date"></span>
+                        </p>
+                        <div class="report-actions">
+                            <button class="action-button primary" id="download-report">
+                                <span>📥 Download Report (PDF)</span>
+                            </button>
+                            <button class="action-button secondary" id="view-preview">
+                                <span>👁 View Preview</span>
+                            </button>
+                            <button class="action-button secondary" id="generate-another">
+                                <span>🔄 Generate Another</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

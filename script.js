@@ -147,6 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Jurisdiction selection
     const jurisdictionBtns = document.querySelectorAll('.jurisdiction-btn');
     const detailsContainer = document.getElementById('jurisdiction-details');
+    const companyInputSection = document.getElementById('company-input-section');
+    let selectedJurisdiction = null;
 
     jurisdictionBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Get selected region
             const region = this.getAttribute('data-region');
+            selectedJurisdiction = region;
             const data = jurisdictionData[region];
 
             // Update details display
@@ -171,7 +174,103 @@ document.addEventListener('DOMContentLoaded', () => {
                         </ul>
                     </div>
                 `;
+
+                // Show the company input form
+                companyInputSection.style.display = 'block';
+
+                // Smooth scroll to form
+                setTimeout(() => {
+                    companyInputSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
             }
         });
     });
+
+    // Form submission
+    const esgForm = document.getElementById('esg-form');
+    const reportResult = document.getElementById('report-result');
+    const loadingEl = document.getElementById('loading');
+    const successMessage = document.getElementById('success-message');
+    const loadingStatus = document.getElementById('loading-status');
+
+    if (esgForm) {
+        esgForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const companyName = document.getElementById('company-name').value;
+            const companyWebsite = document.getElementById('company-website').value;
+            const companyDescription = document.getElementById('company-description').value;
+
+            // Hide form, show result with loading
+            companyInputSection.style.display = 'none';
+            reportResult.style.display = 'block';
+            loadingEl.style.display = 'block';
+            successMessage.style.display = 'none';
+
+            // Scroll to result
+            reportResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Simulate AI processing with status updates
+            const statusMessages = [
+                'Initializing AI analysis...',
+                'Scanning company website...',
+                'Extracting ESG data...',
+                'Analyzing sustainability initiatives...',
+                `Tailoring report for ${jurisdictionData[selectedJurisdiction].title}...`,
+                'Validating compliance requirements...',
+                'Generating comprehensive report...',
+                'Finalizing document...'
+            ];
+
+            let currentStatus = 0;
+            const statusInterval = setInterval(() => {
+                if (currentStatus < statusMessages.length) {
+                    loadingStatus.textContent = statusMessages[currentStatus];
+                    currentStatus++;
+                } else {
+                    clearInterval(statusInterval);
+                }
+            }, 600);
+
+            // Show success after delay
+            setTimeout(() => {
+                clearInterval(statusInterval);
+                loadingEl.style.display = 'none';
+                successMessage.style.display = 'block';
+
+                // Fill in report details
+                document.getElementById('report-jurisdiction').textContent = jurisdictionData[selectedJurisdiction].title;
+                document.getElementById('report-company').textContent = companyName;
+                document.getElementById('report-date').textContent = new Date().toLocaleString();
+            }, 5000);
+        });
+    }
+
+    // Action buttons
+    const downloadBtn = document.getElementById('download-report');
+    const viewPreviewBtn = document.getElementById('view-preview');
+    const generateAnotherBtn = document.getElementById('generate-another');
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            alert('Demo: In production, this would download a PDF report tailored to ' + jurisdictionData[selectedJurisdiction].title);
+        });
+    }
+
+    if (viewPreviewBtn) {
+        viewPreviewBtn.addEventListener('click', function() {
+            alert('Demo: In production, this would open a preview of your ESG report with detailed compliance information, metrics, and recommendations.');
+        });
+    }
+
+    if (generateAnotherBtn) {
+        generateAnotherBtn.addEventListener('click', function() {
+            // Reset form and show it again
+            esgForm.reset();
+            reportResult.style.display = 'none';
+            companyInputSection.style.display = 'block';
+            companyInputSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
 });
