@@ -276,6 +276,14 @@ header {
     line-height: 1.8;
 }
 
+.content-card p strong {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    font-weight: 700;
+    display: inline-block;
+    margin: 0 0.1rem;
+}
+
 /* Mission Section */
 .mission-content {
     max-width: 800px;
