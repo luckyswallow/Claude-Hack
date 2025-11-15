@@ -460,6 +460,18 @@ header {
     margin-right: 0.5rem;
 }
 
+.details-content li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.details-content li a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
 /* Company Input Section */
 .company-input-section {
     background: var(--bg-white);

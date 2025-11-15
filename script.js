@@ -60,86 +60,86 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
-    // Jurisdiction data
+    // Jurisdiction data with official links
     const jurisdictionData = {
         us: {
             title: 'United States ESG Reporting',
             standards: [
-                'SEC Climate Disclosure Rules',
-                'US-specific ESG reporting standards',
-                'SASB (Sustainability Accounting Standards Board)',
-                'Task Force on Climate-related Financial Disclosures (TCFD)',
-                'Corporate sustainability and environmental compliance'
+                { name: 'SEC Climate Disclosure Rules', url: 'https://www.sec.gov/securities-topics/climate-esg' },
+                { name: 'SASB (Sustainability Accounting Standards Board)', url: 'https://www.sasb.org/' },
+                { name: 'Task Force on Climate-related Financial Disclosures (TCFD)', url: 'https://www.fsb-tcfd.org/' },
+                { name: 'EPA Environmental Compliance', url: 'https://www.epa.gov/compliance' },
+                { name: 'DOL Labor and Employment Standards', url: 'https://www.dol.gov/' }
             ]
         },
         uk: {
             title: 'United Kingdom ESG Reporting',
             standards: [
-                'UK ESG disclosure requirements',
-                'Streamlined Energy and Carbon Reporting (SECR)',
-                'Modern Slavery Act compliance',
-                'FCA Listing Rules on climate-related disclosures',
-                'Companies Act 2006 strategic reporting'
+                { name: 'Streamlined Energy and Carbon Reporting (SECR)', url: 'https://www.gov.uk/government/publications/environmental-reporting-guidelines-including-mandatory-greenhouse-gas-emissions-reporting-guidance' },
+                { name: 'Modern Slavery Act', url: 'https://www.legislation.gov.uk/ukpga/2015/30/contents' },
+                { name: 'FCA Listing Rules on Climate Disclosures', url: 'https://www.fca.org.uk/publications/policy-statements/ps21-23-enhancing-climate-related-disclosures-listed-issuers' },
+                { name: 'Companies Act 2006 Strategic Reporting', url: 'https://www.legislation.gov.uk/ukpga/2006/46/contents' },
+                { name: 'TCFD Recommendations', url: 'https://www.fsb-tcfd.org/' }
             ]
         },
         eu: {
             title: 'European Union ESG Reporting',
             standards: [
-                'Corporate Sustainability Reporting Directive (CSRD)',
-                'EU Taxonomy for sustainable activities',
-                'Sustainable Finance Disclosure Regulation (SFDR)',
-                'Non-Financial Reporting Directive (NFRD)',
-                'European Sustainability Reporting Standards (ESRS)'
+                { name: 'Corporate Sustainability Reporting Directive (CSRD)', url: 'https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en' },
+                { name: 'EU Taxonomy for Sustainable Activities', url: 'https://finance.ec.europa.eu/sustainable-finance/tools-and-standards/eu-taxonomy-sustainable-activities_en' },
+                { name: 'Sustainable Finance Disclosure Regulation (SFDR)', url: 'https://finance.ec.europa.eu/sustainable-finance/disclosures/sustainability-related-disclosure-financial-services-sector_en' },
+                { name: 'Non-Financial Reporting Directive (NFRD)', url: 'https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/non-financial-reporting_en' },
+                { name: 'European Sustainability Reporting Standards (ESRS)', url: 'https://www.efrag.org/lab6' }
             ]
         },
         china: {
             title: 'China ESG Reporting',
             standards: [
-                'Chinese ESG reporting standards',
-                'CSRC (China Securities Regulatory Commission) guidelines',
-                'Environmental protection disclosure requirements',
-                'Social responsibility reporting for listed companies',
-                'Green finance and carbon neutrality initiatives'
+                { name: 'CSRC Sustainability Guidelines', url: 'http://www.csrc.gov.cn/csrc_en/' },
+                { name: 'Environmental Protection Law', url: 'https://www.mee.gov.cn/' },
+                { name: 'Shanghai Stock Exchange ESG Disclosure', url: 'http://english.sse.com.cn/' },
+                { name: 'Shenzhen Stock Exchange Sustainability Guidelines', url: 'http://www.szse.cn/English/' },
+                { name: 'Green Finance Standards', url: 'http://www.pbc.gov.cn/en/' }
             ]
         },
         japan: {
             title: 'Japan ESG Reporting',
             standards: [
-                'Japanese ESG disclosure frameworks',
-                'Tokyo Stock Exchange Corporate Governance Code',
-                'TCFD recommendations compliance',
-                'Ministry of Economy guidelines',
-                'Integrated reporting and sustainability disclosure'
+                { name: 'Tokyo Stock Exchange Corporate Governance Code', url: 'https://www.jpx.co.jp/english/news/1020/b5b4pj000000jvxr-att/20210611en.pdf' },
+                { name: 'TCFD Recommendations', url: 'https://www.fsb-tcfd.org/' },
+                { name: 'Ministry of Economy ESG Guidelines', url: 'https://www.meti.go.jp/english/' },
+                { name: 'Japan Exchange Group Sustainability', url: 'https://www.jpx.co.jp/english/' },
+                { name: 'Integrated Reporting Framework', url: 'https://www.integratedreporting.org/' }
             ]
         },
         korea: {
             title: 'South Korea ESG Reporting',
             standards: [
-                'Korean ESG reporting requirements',
-                'K-ESG guidelines and standards',
-                'Financial Services Commission (FSC) sustainability rules',
-                'Korea Exchange (KRX) ESG disclosure',
-                'Act on Sustainability Management'
+                { name: 'K-ESG Guidelines', url: 'https://www.fsc.go.kr/eng/' },
+                { name: 'Financial Services Commission (FSC) ESG Rules', url: 'https://www.fsc.go.kr/eng/' },
+                { name: 'Korea Exchange (KRX) ESG Disclosure', url: 'http://global.krx.co.kr/' },
+                { name: 'Act on Sustainability Management', url: 'https://www.moleg.go.kr/english/' },
+                { name: 'Korean Sustainability Standards Board', url: 'http://www.kasb.or.kr/' }
             ]
         },
         singapore: {
             title: 'Singapore ESG Reporting',
             standards: [
-                'SGX sustainability reporting requirements',
-                'Singapore Exchange Listing Rules',
-                'Comply or Explain approach to sustainability',
-                'TCFD-aligned climate disclosures',
-                'Monetary Authority of Singapore guidelines'
+                { name: 'SGX Sustainability Reporting Requirements', url: 'https://www.sgx.com/regulation/sustainability-reporting' },
+                { name: 'Singapore Exchange Listing Rules', url: 'https://www.sgx.com/regulation/regulatory-overview' },
+                { name: 'Monetary Authority of Singapore ESG Guidelines', url: 'https://www.mas.gov.sg/regulation/sustainable-finance' },
+                { name: 'TCFD-aligned Climate Disclosures', url: 'https://www.fsb-tcfd.org/' },
+                { name: 'Singapore Green Plan 2030', url: 'https://www.greenplan.gov.sg/' }
             ]
         },
         global: {
             title: 'Global/Multi-Region ESG Reporting',
             standards: [
-                'Cross-jurisdiction reporting coordination',
-                'GRI (Global Reporting Initiative) Standards',
-                'International Sustainability Standards Board (ISSB)',
-                'UN Sustainable Development Goals (SDGs) alignment',
-                'Harmonized reporting across multiple regions'
+                { name: 'GRI (Global Reporting Initiative) Standards', url: 'https://www.globalreporting.org/standards/' },
+                { name: 'International Sustainability Standards Board (ISSB)', url: 'https://www.ifrs.org/groups/international-sustainability-standards-board/' },
+                { name: 'UN Sustainable Development Goals (SDGs)', url: 'https://sdgs.un.org/' },
+                { name: 'TCFD Recommendations', url: 'https://www.fsb-tcfd.org/' },
+                { name: 'CDP (Carbon Disclosure Project)', url: 'https://www.cdp.net/' }
             ]
         }
     };
@@ -165,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update details display
             if (data) {
-                const standardsList = data.standards.map(s => `<li>${s}</li>`).join('');
+                const standardsList = data.standards.map(s =>
+                    `<li><a href="${s.url}" target="_blank" rel="noopener">${s.name} →</a></li>`
+                ).join('');
                 detailsContainer.innerHTML = `
                     <div class="details-content">
                         <h3>${data.title}</h3>
@@ -265,7 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to generate HTML report
     function generateHTMLReport(data) {
-        const standardsList = data.standards.map(s => `<li>${s}</li>`).join('');
+        const standardsList = data.standards.map(s =>
+            `<li><a href="${s.url}" target="_blank" rel="noopener" style="color: #2563eb; text-decoration: none;">${s.name} →</a></li>`
+        ).join('');
 
         return `<!DOCTYPE html>
 <html lang="en">
@@ -454,6 +458,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li>Ensure ethical business practices and anti-corruption measures</li>
                 <li>Maintain stakeholder engagement and accountability frameworks</li>
             </ul>
+        </div>
+
+        <div class="section">
+            <h2>UN Sustainable Development Goals (SDGs) Alignment</h2>
+            <p>Based on your company's activities and ESG initiatives, here's how <strong>${data.companyName}</strong> contributes to the United Nations Sustainable Development Goals:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #E5243B; border-radius: 0.5rem;">
+                    <h3 style="color: #E5243B; margin-bottom: 0.5rem;">SDG 7: Affordable and Clean Energy</h3>
+                    <p style="margin: 0;">Potential alignment through renewable energy adoption and energy efficiency programs.</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #4C9F38; border-radius: 0.5rem;">
+                    <h3 style="color: #4C9F38; margin-bottom: 0.5rem;">SDG 8: Decent Work and Economic Growth</h3>
+                    <p style="margin: 0;">Contribution through fair labor practices, employee wellbeing, and sustainable economic activities.</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #FD6925; border-radius: 0.5rem;">
+                    <h3 style="color: #FD6925; margin-bottom: 0.5rem;">SDG 9: Industry, Innovation and Infrastructure</h3>
+                    <p style="margin: 0;">Support through innovative business practices and sustainable infrastructure development.</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #DD1367; border-radius: 0.5rem;">
+                    <h3 style="color: #DD1367; margin-bottom: 0.5rem;">SDG 10: Reduced Inequalities</h3>
+                    <p style="margin: 0;">Advancement through diversity, equity, and inclusion initiatives in the workplace.</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #FD9D24; border-radius: 0.5rem;">
+                    <h3 style="color: #FD9D24; margin-bottom: 0.5rem;">SDG 12: Responsible Consumption and Production</h3>
+                    <p style="margin: 0;">Implementation of circular economy principles and waste reduction strategies.</p>
+                </div>
+                <div style="padding: 1.5rem; background: #f9fafb; border-left: 4px solid #3F7E44; border-radius: 0.5rem;">
+                    <h3 style="color: #3F7E44; margin-bottom: 0.5rem;">SDG 13: Climate Action</h3>
+                    <p style="margin: 0;">Direct contribution through carbon reduction targets and climate mitigation efforts.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #EBF5FB; border-radius: 0.5rem; border-left: 4px solid #19486A;">
+                <h3 style="color: #19486A; margin-bottom: 0.5rem;">How to Strengthen SDG Alignment</h3>
+                <ul style="margin: 0; padding-left: 1.5rem;">
+                    <li style="margin: 0.5rem 0; background: transparent; border: none; padding: 0;">Set specific, measurable targets aligned with each relevant SDG</li>
+                    <li style="margin: 0.5rem 0; background: transparent; border: none; padding: 0;">Integrate SDG indicators into your ESG reporting framework</li>
+                    <li style="margin: 0.5rem 0; background: transparent; border: none; padding: 0;">Engage stakeholders in SDG-related initiatives and partnerships</li>
+                    <li style="margin: 0.5rem 0; background: transparent; border: none; padding: 0;">Track and report progress against SDG targets annually</li>
+                    <li style="margin: 0.5rem 0; background: transparent; border: none; padding: 0;">Learn more at <a href="https://sdgs.un.org/" target="_blank" style="color: #2563eb;">UN Sustainable Development Goals</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="section">
