@@ -52,7 +52,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe cards for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.content-card, .tool-card, .why-item, .team-card, .jurisdiction-card');
+    const cards = document.querySelectorAll('.content-card, .tool-card, .why-item, .team-card');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -60,22 +60,117 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
+    // Jurisdiction data
+    const jurisdictionData = {
+        us: {
+            title: 'United States ESG Reporting',
+            standards: [
+                'SEC Climate Disclosure Rules',
+                'US-specific ESG reporting standards',
+                'SASB (Sustainability Accounting Standards Board)',
+                'Task Force on Climate-related Financial Disclosures (TCFD)',
+                'Corporate sustainability and environmental compliance'
+            ]
+        },
+        uk: {
+            title: 'United Kingdom ESG Reporting',
+            standards: [
+                'UK ESG disclosure requirements',
+                'Streamlined Energy and Carbon Reporting (SECR)',
+                'Modern Slavery Act compliance',
+                'FCA Listing Rules on climate-related disclosures',
+                'Companies Act 2006 strategic reporting'
+            ]
+        },
+        eu: {
+            title: 'European Union ESG Reporting',
+            standards: [
+                'Corporate Sustainability Reporting Directive (CSRD)',
+                'EU Taxonomy for sustainable activities',
+                'Sustainable Finance Disclosure Regulation (SFDR)',
+                'Non-Financial Reporting Directive (NFRD)',
+                'European Sustainability Reporting Standards (ESRS)'
+            ]
+        },
+        china: {
+            title: 'China ESG Reporting',
+            standards: [
+                'Chinese ESG reporting standards',
+                'CSRC (China Securities Regulatory Commission) guidelines',
+                'Environmental protection disclosure requirements',
+                'Social responsibility reporting for listed companies',
+                'Green finance and carbon neutrality initiatives'
+            ]
+        },
+        japan: {
+            title: 'Japan ESG Reporting',
+            standards: [
+                'Japanese ESG disclosure frameworks',
+                'Tokyo Stock Exchange Corporate Governance Code',
+                'TCFD recommendations compliance',
+                'Ministry of Economy guidelines',
+                'Integrated reporting and sustainability disclosure'
+            ]
+        },
+        korea: {
+            title: 'South Korea ESG Reporting',
+            standards: [
+                'Korean ESG reporting requirements',
+                'K-ESG guidelines and standards',
+                'Financial Services Commission (FSC) sustainability rules',
+                'Korea Exchange (KRX) ESG disclosure',
+                'Act on Sustainability Management'
+            ]
+        },
+        singapore: {
+            title: 'Singapore ESG Reporting',
+            standards: [
+                'SGX sustainability reporting requirements',
+                'Singapore Exchange Listing Rules',
+                'Comply or Explain approach to sustainability',
+                'TCFD-aligned climate disclosures',
+                'Monetary Authority of Singapore guidelines'
+            ]
+        },
+        global: {
+            title: 'Global/Multi-Region ESG Reporting',
+            standards: [
+                'Cross-jurisdiction reporting coordination',
+                'GRI (Global Reporting Initiative) Standards',
+                'International Sustainability Standards Board (ISSB)',
+                'UN Sustainable Development Goals (SDGs) alignment',
+                'Harmonized reporting across multiple regions'
+            ]
+        }
+    };
+
     // Jurisdiction selection
-    const jurisdictionCards = document.querySelectorAll('.jurisdiction-card');
-    jurisdictionCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Toggle selected state
-            this.classList.toggle('selected');
+    const jurisdictionBtns = document.querySelectorAll('.jurisdiction-btn');
+    const detailsContainer = document.getElementById('jurisdiction-details');
+
+    jurisdictionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            jurisdictionBtns.forEach(b => b.classList.remove('active'));
+
+            // Add active class to clicked button
+            this.classList.add('active');
 
             // Get selected region
             const region = this.getAttribute('data-region');
-            const isSelected = this.classList.contains('selected');
+            const data = jurisdictionData[region];
 
-            // Log selection (you can replace this with actual form submission or API call)
-            if (isSelected) {
-                console.log(`Selected jurisdiction: ${region}`);
-            } else {
-                console.log(`Deselected jurisdiction: ${region}`);
+            // Update details display
+            if (data) {
+                const standardsList = data.standards.map(s => `<li>${s}</li>`).join('');
+                detailsContainer.innerHTML = `
+                    <div class="details-content">
+                        <h3>${data.title}</h3>
+                        <ul>
+                            ${standardsList}
+                        </ul>
+                    </div>
+                `;
             }
         });
     });
