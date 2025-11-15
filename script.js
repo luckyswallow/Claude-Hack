@@ -449,10 +449,18 @@ document.addEventListener('DOMContentLoaded', () => {
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem; }
         .container { max-width: 900px; margin: 0 auto; background: white; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; }
-        .header { text-align: center; border-bottom: 4px solid #10b981; padding-bottom: 2rem; margin-bottom: 2rem; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #10b981; margin-bottom: 0.5rem; }
-        h1 { font-size: 2.5rem; color: #1f2937; margin-bottom: 0.5rem; }
-        .badge { display: inline-block; background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; }
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #10b981;
+            padding: 4rem 2rem 2rem;
+            margin: -3rem -3rem 2rem -3rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.9) 0%, rgba(4, 120, 87, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        h1 { font-size: 2.5rem; color: white; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: rgba(255, 255, 255, 0.25); color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; border: 2px solid white; }
         .report-meta { background: #f0fdf4; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #10b981; }
         .report-meta p { margin: 0.5rem 0; }
         .report-meta strong { color: #10b981; }
@@ -599,10 +607,18 @@ document.addEventListener('DOMContentLoaded', () => {
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem; }
         .container { max-width: 900px; margin: 0 auto; background: white; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; }
-        .header { text-align: center; border-bottom: 4px solid #f59e0b; padding-bottom: 2rem; margin-bottom: 2rem; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.5rem; }
-        h1 { font-size: 2.5rem; color: #1f2937; margin-bottom: 0.5rem; }
-        .badge { display: inline-block; background: #f59e0b; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; }
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #f59e0b;
+            padding: 4rem 2rem 2rem;
+            margin: -3rem -3rem 2rem -3rem;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.9) 0%, rgba(217, 119, 6, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        h1 { font-size: 2.5rem; color: white; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: rgba(255, 255, 255, 0.25); color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; border: 2px solid white; }
         .report-meta { background: #fffbeb; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #f59e0b; }
         .report-meta p { margin: 0.5rem 0; }
         .report-meta strong { color: #f59e0b; }
@@ -751,10 +767,18 @@ document.addEventListener('DOMContentLoaded', () => {
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem; }
         .container { max-width: 900px; margin: 0 auto; background: white; padding: 3rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; }
-        .header { text-align: center; border-bottom: 4px solid #8b5cf6; padding-bottom: 2rem; margin-bottom: 2rem; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #8b5cf6; margin-bottom: 0.5rem; }
-        h1 { font-size: 2.5rem; color: #1f2937; margin-bottom: 0.5rem; }
-        .badge { display: inline-block; background: #8b5cf6; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; }
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #8b5cf6;
+            padding: 4rem 2rem 2rem;
+            margin: -3rem -3rem 2rem -3rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9) 0%, rgba(109, 40, 217, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+        h1 { font-size: 2.5rem; color: white; margin-bottom: 0.5rem; }
+        .badge { display: inline-block; background: rgba(255, 255, 255, 0.25); color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 600; margin: 1rem 0; border: 2px solid white; }
         .report-meta { background: #f5f3ff; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; border-left: 4px solid #8b5cf6; }
         .report-meta p { margin: 0.5rem 0; }
         .report-meta strong { color: #8b5cf6; }
@@ -946,18 +970,21 @@ document.addEventListener('DOMContentLoaded', () => {
         .header {
             text-align: center;
             border-bottom: 3px solid #2563eb;
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
+            padding: 4rem 2rem 2rem;
+            margin: -3rem -3rem 2rem -3rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(16, 185, 129, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            border-radius: 0.5rem 0.5rem 0 0;
         }
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2563eb;
+            color: white;
             margin-bottom: 0.5rem;
         }
         h1 {
             font-size: 2.5rem;
-            color: #1f2937;
+            color: white;
             margin-bottom: 0.5rem;
         }
         .report-meta {
@@ -2260,8 +2287,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .header {
             text-align: center;
             border-bottom: 4px solid \${sdgData.color};
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
+            padding: 4rem 2rem 2rem;
+            margin: -3rem -3rem 2rem -3rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(16, 185, 129, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            border-radius: 0.5rem 0.5rem 0 0;
         }
         .sdg-badge {
             width: 120px;
@@ -2279,12 +2309,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         h1 {
             font-size: 2.5rem;
-            color: #1f2937;
+            color: white;
             margin-bottom: 0.5rem;
         }
         .subtitle {
             font-size: 1.2rem;
-            color: #6b7280;
+            color: rgba(255, 255, 255, 0.95);
             font-style: italic;
         }
         .report-meta {
