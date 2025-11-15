@@ -523,19 +523,19 @@ header {
 .tam-ring {
     width: 220px;
     height: 220px;
-    border: 12px solid #B85C3C;
+    border: 12px solid #047857;
 }
 
 .sam-ring {
     width: 180px;
     height: 180px;
-    border: 12px solid #D4944F;
+    border: 12px solid #10b981;
 }
 
 .som-ring {
     width: 140px;
     height: 140px;
-    border: 12px solid #E5BC7C;
+    border: 12px solid #6ee7b7;
 }
 
 .circle-ring:hover {
@@ -551,15 +551,15 @@ header {
 }
 
 .tam-ring .circle-label {
-    color: #B85C3C;
+    color: #047857;
 }
 
 .sam-ring .circle-label {
-    color: #D4944F;
+    color: #10b981;
 }
 
 .som-ring .circle-label {
-    color: #E5BC7C;
+    color: #6ee7b7;
 }
 
 /* Market Amount Badge */
@@ -572,21 +572,21 @@ header {
 }
 
 .tam-amount {
-    color: #B85C3C;
-    border-color: #B85C3C;
-    background: rgba(184, 92, 60, 0.08);
+    color: #047857;
+    border-color: #047857;
+    background: rgba(4, 120, 87, 0.08);
 }
 
 .sam-amount {
-    color: #D4944F;
-    border-color: #D4944F;
-    background: rgba(212, 148, 79, 0.08);
+    color: #10b981;
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.08);
 }
 
 .som-amount {
-    color: #E5BC7C;
-    border-color: #E5BC7C;
-    background: rgba(229, 188, 124, 0.08);
+    color: #6ee7b7;
+    border-color: #6ee7b7;
+    background: rgba(110, 231, 183, 0.08);
 }
 
 /* Market Title */
@@ -616,7 +616,7 @@ header {
     text-align: center;
     margin-top: 3rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(184, 92, 60, 0.05), rgba(229, 188, 124, 0.05));
+    background: linear-gradient(135deg, rgba(4, 120, 87, 0.05), rgba(110, 231, 183, 0.05));
     border-radius: 1rem;
     border: 2px dashed var(--border-color);
     font-size: 1rem;
