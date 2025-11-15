@@ -474,6 +474,156 @@ header {
     line-height: 1.8;
 }
 
+/* Business Potential Section */
+.market-funnel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.market-card {
+    background: var(--bg-white);
+    border-radius: 1.5rem;
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid transparent;
+}
+
+.market-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.market-card.tam {
+    width: 100%;
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.market-card.tam::before {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+}
+
+.market-card.sam {
+    width: 85%;
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.market-card.sam::before {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.market-card.som {
+    width: 70%;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.market-card.som::before {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.market-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.market-icon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.market-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 0.05em;
+}
+
+.market-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.market-card.tam .market-value {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.market-card.sam .market-value {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.market-card.som .market-value {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.market-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.market-details {
+    position: relative;
+    z-index: 1;
+}
+
+.market-details p {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin: 0.75rem 0;
+    line-height: 1.6;
+}
+
+.market-details strong {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.market-note {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
 /* Team Section */
 .team-grid {
     display: grid;
@@ -1112,6 +1262,26 @@ footer p {
     .why-grid,
     .team-grid {
         grid-template-columns: 1fr;
+    }
+
+    .market-card.tam,
+    .market-card.sam,
+    .market-card.som {
+        width: 100%;
+    }
+
+    .market-value {
+        font-size: 2.5rem;
+    }
+
+    .market-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .market-icon {
+        font-size: 2.5rem;
     }
 }
 
