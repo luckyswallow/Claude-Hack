@@ -13,6 +13,7 @@ claude/create-website-01MLkEjAA6RaGuGBnSTyVX7C
 Click Save
 Wait a few minutes. GitHub will generate a URL like:
 https://luckyswallow.github.io/Claude-Hack/
+
 Option 2: Download and Open Locally
 Navigate to the branch:
 claude/create-website-01MLkEjAA6RaGuGBnSTyVX7C
@@ -21,6 +22,7 @@ Extract the ZIP file
 Locate:
 index.html
 Double-click to open in your browser
+
 Option 3: Clone with Git
 git clone https://github.com/luckyswallow/Claude-Hack.git
 cd Claude-Hack
@@ -39,10 +41,13 @@ python3 -m http.server 8000
 Open in browser:
 
 http://localhost:8000
+
+
 📁 File Structure
 index.html – Main landing page (all core content)
 styles.css – Modern styling and layout
 script.js – JavaScript for interactions and animations
+
 🧩 Website Sections
 Hero Section – Value proposition and headline
 Problem – Three major challenges in ESG reporting
@@ -50,6 +55,7 @@ Mission – Vision and purpose of the solution
 Tools – Six AI-powered features
 Why Choose Us – Six key advantages
 Teams – Overview of four core teams
+
 ⚙️ Technical Features
 ✅ Fully responsive design (mobile, tablet, desktop)
 ✅ Modern UI/UX
@@ -57,8 +63,8 @@ Teams – Overview of four core teams
 ✅ Hover interactions
 ✅ Scroll-based animations
 ✅ No build tools required (pure HTML/CSS/JS)
-💡 Concept
 
+💡 Concept
 This landing page demonstrates how AI can be applied to:
 
 Automate ESG report generation
